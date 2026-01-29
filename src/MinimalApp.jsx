@@ -31,6 +31,22 @@ import ProfessionalDancerDetails from './pages/careers/ProfessionalDancerDetails
 import MusicianDetails from './pages/careers/MusicianDetails'
 import StandupComedyDetails from './pages/careers/StandupComedyDetails'
 import AerospaceEngineeringDetails from './pages/careers/AerospaceEngineeringDetails'
+import ChemicalEngineeringDetails from './pages/careers/ChemicalEngineeringDetails'
+import BiotechnologyEngineeringDetails from './pages/careers/BiotechnologyEngineeringDetails'
+import DentistryDetails from './pages/careers/DentistryDetails'
+import VeterinaryDetails from './pages/careers/VeterinaryDetails'
+import PhysiotherapyDetails from './pages/careers/PhysiotherapyDetails'
+import BBADetails from './pages/careers/BBADetails'
+import HotelManagementDetails from './pages/careers/HotelManagementDetails'
+import EventManagementDetails from './pages/careers/EventManagementDetails'
+import FashionDesignDetails from './pages/careers/FashionDesignDetails'
+import AnimationVFXDetails from './pages/careers/AnimationVFXDetails'
+import TraderDetails from './pages/careers/TraderDetails'
+import TeacherDetails from './pages/careers/TeacherDetails'
+import PoliticianDetails from './pages/careers/PoliticianDetails'
+import HairStylistDetails from './pages/careers/HairStylistDetails'
+import ProfessionalChefDetails from './pages/careers/ProfessionalChefDetails'
+import DubbingArtistDetails from './pages/careers/DubbingArtistDetails'
 
 function MinimalApp() {
   return (
@@ -69,6 +85,22 @@ function MinimalApp() {
             <Route path="/career/musician" element={<MusicianDetails />} />
             <Route path="/career/standup-comedy" element={<StandupComedyDetails />} />
             <Route path="/career/aerospace-engineering" element={<AerospaceEngineeringDetails />} />
+            <Route path="/career/chemical-engineering" element={<ChemicalEngineeringDetails />} />
+            <Route path="/career/biotechnology-engineering" element={<BiotechnologyEngineeringDetails />} />
+          <Route path="/career/dentistry" element={<DentistryDetails />} />
+          <Route path="/career/veterinary" element={<VeterinaryDetails />} />
+          <Route path="/career/physiotherapy" element={<PhysiotherapyDetails />} />
+          <Route path="/career/teacher" element={<TeacherDetails />} />
+          <Route path="/career/politician" element={<PoliticianDetails />} />
+          <Route path="/career/hair-stylist" element={<HairStylistDetails />} />
+          <Route path="/career/professional-chef" element={<ProfessionalChefDetails />} />
+          <Route path="/career/dubbing-artist" element={<DubbingArtistDetails />} />
+          <Route path="/career/trader" element={<TraderDetails />} />
+          <Route path="/career/bba" element={<BBADetails />} />
+          <Route path="/career/hotel-management" element={<HotelManagementDetails />} />
+          <Route path="/career/event-management" element={<EventManagementDetails />} />
+          <Route path="/career/fashion-design" element={<FashionDesignDetails />} />
+          <Route path="/career/animation-vfx" element={<AnimationVFXDetails />} />
           </Routes>
         </main>
       </div>
