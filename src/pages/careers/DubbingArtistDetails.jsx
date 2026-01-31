@@ -274,7 +274,7 @@ const DubbingArtistDetails = () => {
                   <li>• <strong>Rahul Sharma Voice Acting Academy:</strong> Online, ₹10-25K, dubbing techniques</li>
                   <li>• <strong>FTII Pune:</strong> Acting diploma includes voice training, ₹2-5L, 1-2 years</li>
                   <li>• <strong>Online Platforms:</strong> Udemy/Coursera voice acting courses ₹1-5K</li>
-                  <li>• Reality: Courses help but VOICE QUALITY > certificates</li>
+                    <li>• Reality: Courses help but VOICE QUALITY &gt; certificates</li>
                 </ul>
               </div>
               <div>

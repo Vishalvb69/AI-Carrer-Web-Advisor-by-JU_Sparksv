@@ -209,7 +209,7 @@ const TraderDetails = () => {
                 </li>
                 <li className="flex items-start">
                   <Brain className="h-5 w-5 text-purple-600 mr-3 mt-1 flex-shrink-0" />
-                  <span><strong>Risk Management:</strong> Position sizing, portfolio allocation, never risk >2% per trade</span>
+                    <span><strong>Risk Management:</strong> Position sizing, portfolio allocation, never risk &gt;2% per trade</span>
                 </li>
                 <li className="flex items-start">
                   <BookOpen className="h-5 w-5 text-orange-600 mr-3 mt-1 flex-shrink-0" />
@@ -346,7 +346,7 @@ const TraderDetails = () => {
                 <li>• <strong>Position sizing</strong> - How much to risk</li>
                 <li>• <strong>Stop-loss</strong> - Always protect capital</li>
                 <li>• <strong>Risk:Reward ratio</strong> - Min 1:2</li>
-                <li>• <strong>Max risk</strong> - Never >2% per trade</li>
+                  <li>• <strong>Max risk</strong> - Never &gt;2% per trade</li>
                 <li>• <strong>Diversification</strong> - Don't put all in one</li>
                 <li>• <strong>Capital preservation</strong> - First rule</li>
                 <li>• <strong>Trade journaling</strong> - Track mistakes</li>

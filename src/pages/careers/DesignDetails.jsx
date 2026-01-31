@@ -52,7 +52,7 @@ const DesignDetails = () => {
             </div>
             <div>
               <div className="text-3xl font-bold text-pink-700">Portfolio</div>
-              <div className="text-pink-600 text-sm">Skills > Degrees</div>
+              <div className="text-pink-600 text-sm">Skills &gt; Degrees</div>
             </div>
           </div>
         </div>
