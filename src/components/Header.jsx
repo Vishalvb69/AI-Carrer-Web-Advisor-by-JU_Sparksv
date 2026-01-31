@@ -22,6 +22,7 @@ const Header = () => {
       ],
     },
     { name: 'AI Impact', href: '/ai-impact' },
+    { name: 'Courses & Learning', href: '/courses' },
     { name: 'Resources', href: '/resources' },
   ]
 

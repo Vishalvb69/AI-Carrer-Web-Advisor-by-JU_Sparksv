@@ -11,6 +11,7 @@ import EmergingCareers from './pages/EmergingCareers'
 import ClassTenthBelow from './pages/ClassTenthBelow'
 import AIImpact from './pages/AIImpact'
 import NewResources from './pages/NewResources'
+import CoursesPage from './pages/CoursesPage'
 import ComputerScienceDetails from './pages/careers/ComputerScienceDetails'
 import ElectricalEngineeringDetails from './pages/careers/ElectricalEngineeringDetails'
 import MechanicalEngineeringDetails from './pages/careers/MechanicalEngineeringDetails'
@@ -31,6 +32,22 @@ import ProfessionalDancerDetails from './pages/careers/ProfessionalDancerDetails
 import MusicianDetails from './pages/careers/MusicianDetails'
 import StandupComedyDetails from './pages/careers/StandupComedyDetails'
 import AerospaceEngineeringDetails from './pages/careers/AerospaceEngineeringDetails'
+import LawyerDetails from './pages/careers/LawyerDetails'
+import AgricultureDetails from './pages/careers/AgricultureDetails'
+import GameDeveloperDetails from './pages/careers/GameDeveloperDetails'
+import ChefDetails from './pages/careers/ChefDetails'
+import PhotographerDetails from './pages/careers/PhotographerDetails'
+import BusinessDetails from './pages/careers/BusinessDetails'
+import AstrologyDetails from './pages/careers/AstrologyDetails'
+import ScientistDetails from './pages/careers/ScientistDetails'
+import AstronautDetails from './pages/careers/AstronautDetails'
+import EthicalHackerDetails from './pages/careers/EthicalHackerDetails'
+import DataScientistDetails from './pages/careers/DataScientistDetails'
+import CloudEngineerDetails from './pages/careers/CloudEngineerDetails'
+import UIUXDesignerDetails from './pages/careers/UIUXDesignerDetails'
+import StockMarketAnalystDetails from './pages/careers/StockMarketAnalystDetails'
+import InvestmentBankerDetails from './pages/careers/InvestmentBankerDetails'
+import ScriptWriterDetails from './pages/careers/ScriptWriterDetails'
 
 function MinimalApp() {
   return (
@@ -49,6 +66,7 @@ function MinimalApp() {
             <Route path="/class-10-below" element={<ClassTenthBelow />} />
             <Route path="/ai-impact" element={<AIImpact />} />
             <Route path="/resources" element={<NewResources />} />
+            <Route path="/courses" element={<CoursesPage />} />
             <Route path="/career/computer-science-engineering" element={<ComputerScienceDetails />} />
             <Route path="/career/electrical-engineering" element={<ElectricalEngineeringDetails />} />
             <Route path="/career/mechanical-engineering" element={<MechanicalEngineeringDetails />} />
@@ -69,6 +87,22 @@ function MinimalApp() {
             <Route path="/career/musician" element={<MusicianDetails />} />
             <Route path="/career/standup-comedy" element={<StandupComedyDetails />} />
             <Route path="/career/aerospace-engineering" element={<AerospaceEngineeringDetails />} />
+            <Route path="/career/lawyer" element={<LawyerDetails />} />
+            <Route path="/career/agriculture" element={<AgricultureDetails />} />
+            <Route path="/career/game-developer" element={<GameDeveloperDetails />} />
+            <Route path="/career/chef" element={<ChefDetails />} />
+            <Route path="/career/photographer" element={<PhotographerDetails />} />
+            <Route path="/career/business" element={<BusinessDetails />} />
+            <Route path="/career/astrology" element={<AstrologyDetails />} />
+            <Route path="/career/scientist" element={<ScientistDetails />} />
+            <Route path="/career/astronaut" element={<AstronautDetails />} />
+            <Route path="/career/ethical-hacker" element={<EthicalHackerDetails />} />
+            <Route path="/career/data-scientist" element={<DataScientistDetails />} />
+            <Route path="/career/cloud-engineer" element={<CloudEngineerDetails />} />
+            <Route path="/career/ui-ux-designer" element={<UIUXDesignerDetails />} />
+            <Route path="/career/stock-market-analyst" element={<StockMarketAnalystDetails />} />
+            <Route path="/career/investment-banker" element={<InvestmentBankerDetails />} />
+            <Route path="/career/script-writer" element={<ScriptWriterDetails />} />
           </Routes>
         </main>
       </div>
