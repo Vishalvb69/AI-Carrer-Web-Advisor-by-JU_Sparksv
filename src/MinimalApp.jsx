@@ -47,6 +47,12 @@ import PoliticianDetails from './pages/careers/PoliticianDetails'
 import HairStylistDetails from './pages/careers/HairStylistDetails'
 import ProfessionalChefDetails from './pages/careers/ProfessionalChefDetails'
 import DubbingArtistDetails from './pages/careers/DubbingArtistDetails'
+import ProfessionalBoxerDetails from './pages/careers/ProfessionalBoxerDetails'
+import ProfessionalBodybuilderDetails from './pages/careers/ProfessionalBodybuilderDetails'
+import ProfessionalWrestlerDetails from './pages/careers/ProfessionalWrestlerDetails'
+import ProfessionalModelDetails from './pages/careers/ProfessionalModelDetails'
+import MakeupArtistDetails from './pages/careers/MakeupArtistDetails'
+import ProfessionalCricketerDetails from './pages/careers/ProfessionalCricketerDetails'
 
 function MinimalApp() {
   return (
@@ -95,6 +101,12 @@ function MinimalApp() {
           <Route path="/career/hair-stylist" element={<HairStylistDetails />} />
           <Route path="/career/professional-chef" element={<ProfessionalChefDetails />} />
           <Route path="/career/dubbing-artist" element={<DubbingArtistDetails />} />
+          <Route path="/career/professional-boxer" element={<ProfessionalBoxerDetails />} />
+          <Route path="/career/professional-bodybuilder" element={<ProfessionalBodybuilderDetails />} />
+          <Route path="/career/professional-wrestler" element={<ProfessionalWrestlerDetails />} />
+          <Route path="/career/professional-model" element={<ProfessionalModelDetails />} />
+          <Route path="/career/makeup-artist" element={<MakeupArtistDetails />} />
+          <Route path="/career/professional-cricketer" element={<ProfessionalCricketerDetails />} />
           <Route path="/career/trader" element={<TraderDetails />} />
           <Route path="/career/bba" element={<BBADetails />} />
           <Route path="/career/hotel-management" element={<HotelManagementDetails />} />
