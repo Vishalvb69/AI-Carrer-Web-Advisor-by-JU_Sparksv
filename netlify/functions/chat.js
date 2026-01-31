@@ -1,7 +1,7 @@
 // Netlify Function for AI-powered career counseling chat
 import { checkRateLimit, getClientIP, sanitizeInput } from './utils/rateLimit.js';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const RATE_LIMIT_ENABLED = process.env.RATE_LIMIT_CHAT_ENABLED === 'true';
 const MESSAGES_PER_HOUR = parseInt(process.env.RATE_LIMIT_MESSAGES_PER_HOUR) || 10;
 
@@ -118,7 +118,7 @@ export async function handler(event, context) {
     }
 
     // Check if API key is available
-    if (!GEMINI_API_KEY) {
+    if (!OPENROUTER_API_KEY) {
       return {
         statusCode: 500,
         headers,
@@ -128,37 +128,40 @@ export async function handler(event, context) {
       };
     }
 
-    // Prepare conversation for Gemini API
-    const conversationText = conversationHistory.slice(-10)
-      .map(msg => `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`)
-      .join('\n') + `\nUser: ${sanitizedMessage}`;
+    // Prepare messages for OpenRouter API
+    const messages = [
+      {
+        role: 'system',
+        content: CAREER_CONTEXT
+      },
+      ...conversationHistory.slice(-10),
+      {
+        role: 'user',
+        content: sanitizedMessage
+      }
+    ];
 
-    const fullPrompt = `${CAREER_CONTEXT}\n\nConversation:\n${conversationText}\n\nAssistant:`;
-
-    // Call Gemini API
-    const geminiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+    // Call OpenRouter API
+    const openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://ai-career-counselor.netlify.app',
+        'X-Title': 'AI Career Counselor'
       },
       body: JSON.stringify({
-        contents: [{
-          parts: [{
-            text: fullPrompt
-          }]
-        }],
-        generationConfig: {
-          maxOutputTokens: 500,
-          temperature: 0.7,
-          topP: 0.8,
-          topK: 40
-        }
+        model: 'google/gemini-pro-1.5',
+        messages: messages,
+        max_tokens: 500,
+        temperature: 0.7,
+        top_p: 0.8
       })
     });
 
-    if (!geminiResponse.ok) {
-      const errorData = await geminiResponse.text();
-      console.error('Gemini API error:', errorData);
+    if (!openRouterResponse.ok) {
+      const errorData = await openRouterResponse.text();
+      console.error('OpenRouter API error:', errorData);
       return {
         statusCode: 500,
         headers,
@@ -168,8 +171,8 @@ export async function handler(event, context) {
       };
     }
 
-    const geminiData = await geminiResponse.json();
-    const aiResponse = geminiData.candidates[0].content.parts[0].text;
+    const openRouterData = await openRouterResponse.json();
+    const aiResponse = openRouterData.choices[0].message.content;
 
     // Return successful response
     return {
