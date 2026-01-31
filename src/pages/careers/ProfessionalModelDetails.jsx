@@ -7,7 +7,7 @@ export default function ProfessionalModelDetails() {
       {/* Hero */}
       <div className="bg-gradient-to-r from-indigo-700 via-pink-600 to-purple-600 text-white py-20">
         <div className="container mx-auto px-4">
-          <Link to="/explore-careers" className="inline-flex items-center text-white/90 hover:text-white mb-6">
+          <Link to="/emerging-careers" className="inline-flex items-center text-white/90 hover:text-white mb-6">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Careers
           </Link>
 
@@ -211,7 +211,7 @@ export default function ProfessionalModelDetails() {
           </div>
 
           <div className="text-center">
-            <Link to="/explore-careers" className="inline-block bg-indigo-600 text-white px-5 py-2 rounded-lg">Explore Other Careers</Link>
+            <Link to="/emerging-careers" className="inline-block bg-indigo-600 text-white px-5 py-2 rounded-lg">Explore Other Careers</Link>
           </div>
         </div>
       </div>

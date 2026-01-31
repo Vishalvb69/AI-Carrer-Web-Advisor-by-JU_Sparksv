@@ -7,7 +7,7 @@ export default function ProfessionalCricketerDetails() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-700 via-green-600 to-orange-600 text-white py-20">
         <div className="container mx-auto px-4">
-          <Link to="/explore-careers" className="inline-flex items-center text-white/90 hover:text-white mb-6">
+          <Link to="/emerging-careers" className="inline-flex items-center text-white/90 hover:text-white mb-6">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Careers
           </Link>
 
@@ -537,7 +537,7 @@ export default function ProfessionalCricketerDetails() {
                 <strong>Final Word:</strong> Cricket is beautiful sport. Play it, enjoy it, love it. But pursuing it PROFESSIONALLY = lottery ticket with 0.0001% odds while sacrificing education and 20 years of life. <strong className="text-yellow-300">Play cricket recreationally, build normal career, enjoy cricket without destroying your financial future.</strong> Even MS Dhoni had railway job before IPL (smart backup). Learn from that.
               </p>
               <Link
-                to="/explore-careers"
+                to="/emerging-careers"
                 className="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 Explore Realistic Careers

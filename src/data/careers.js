@@ -767,6 +767,25 @@ export const emergingCareers = [
     detailsUrl: '/career/professional-cricketer'
   },
   {
+    id: 'professional-athlete',
+    title: 'Professional Athlete (Football/Badminton/Tennis/Hockey)',
+    description: 'Compete at national and international level in non-cricket sports',
+    averageSalary: '₹3-15 LPA',
+    topSalary: '₹50L-15Cr+',
+    growthRate: '5%',
+    skills: ['Athletic Ability', 'Mental Toughness', 'Strategic Thinking', 'Team Coordination'],
+    jobRoles: ['National Player', 'ISL Footballer', 'Badminton/Tennis Pro', 'Sports Coach', 'Government Sports Quota'],
+    companies: ['SAI', 'ISL Teams', 'State Sports Authority', 'Railways Sports Quota', 'Police Sports Quota'],
+    aiImpact: 'Performance analytics, training optimization, injury prevention AI',
+    futureOutlook: 'Limited',
+    education: 'No formal degree - Start age 8-12, state/national level by 18-22',
+    entranceExams: ['District/State/National Trials', 'Sports Quota Job Exams'],
+    workEnvironment: 'Training camps, stadiums, government jobs with sports duties',
+    pros: ['Sports quota govt jobs ₹3-8L/year', 'Top 10 earn ₹50L+/year', 'Peak fitness', 'Passion work'],
+    cons: ['0.0001% Indian team odds', 'Family invests ₹10-30L', 'Worse money than cricket', 'Short career 10-12 years', 'Natural talent required'],
+    detailsUrl: '/career/professional-athlete'
+  },
+  {
     id: 'professional-esports',
     title: 'Professional Esports Player',
     description: 'Compete in gaming tournaments and build streaming career',

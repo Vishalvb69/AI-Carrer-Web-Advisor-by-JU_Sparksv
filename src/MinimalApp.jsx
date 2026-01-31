@@ -53,6 +53,7 @@ import ProfessionalWrestlerDetails from './pages/careers/ProfessionalWrestlerDet
 import ProfessionalModelDetails from './pages/careers/ProfessionalModelDetails'
 import MakeupArtistDetails from './pages/careers/MakeupArtistDetails'
 import ProfessionalCricketerDetails from './pages/careers/ProfessionalCricketerDetails'
+import ProfessionalAthleteDetails from './pages/careers/ProfessionalAthleteDetails'
 
 function MinimalApp() {
   return (
@@ -107,6 +108,7 @@ function MinimalApp() {
           <Route path="/career/professional-model" element={<ProfessionalModelDetails />} />
           <Route path="/career/makeup-artist" element={<MakeupArtistDetails />} />
           <Route path="/career/professional-cricketer" element={<ProfessionalCricketerDetails />} />
+          <Route path="/career/professional-athlete" element={<ProfessionalAthleteDetails />} />
           <Route path="/career/trader" element={<TraderDetails />} />
           <Route path="/career/bba" element={<BBADetails />} />
           <Route path="/career/hotel-management" element={<HotelManagementDetails />} />

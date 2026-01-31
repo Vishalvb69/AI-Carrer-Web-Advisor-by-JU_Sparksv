@@ -7,7 +7,7 @@ export default function MakeupArtistDetails() {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 text-white py-20">
         <div className="container mx-auto px-4">
-          <Link to="/explore-careers" className="inline-flex items-center text-white/90 hover:text-white mb-6">
+          <Link to="/emerging-careers" className="inline-flex items-center text-white/90 hover:text-white mb-6">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Careers
           </Link>
 
@@ -529,7 +529,7 @@ export default function MakeupArtistDetails() {
                 <strong>Final Word:</strong> Makeup artistry CAN be great career—creative, flexible, high earning potential. But income inconsistent, physically demanding, requires constant marketing. <strong className="text-yellow-300">Keep as side hustle initially, go full-time ONLY if getting regular bookings + can handle brutal wedding season.</strong> Most successful MUAs diversify income (bridal + teaching + social media) to reduce seasonality risk.
               </p>
               <Link
-                to="/explore-careers"
+                to="/emerging-careers"
                 className="inline-block bg-white text-pink-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 Explore Other Careers
