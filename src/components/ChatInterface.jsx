@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { 
   Send, 
   Bot, 
@@ -28,6 +29,44 @@ const ChatInterface = () => {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  // Function to format message text with clickable links
+  const formatMessageWithLinks = (text) => {
+    // Regex to match paths like /career/mbbs, /resources, etc.
+    const pathRegex = /(\/[\w-]+(?:\/[\w-]+)*)/g
+    const parts = []
+    let lastIndex = 0
+    let match
+
+    while ((match = pathRegex.exec(text)) !== null) {
+      // Add text before the match
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index))
+      }
+      
+      // Add the link
+      const path = match[0]
+      parts.push(
+        <Link 
+          key={`link-${match.index}`} 
+          to={path} 
+          className="text-blue-600 underline hover:text-blue-800 font-medium"
+          onClick={() => setIsOpen(false)}
+        >
+          {path}
+        </Link>
+      )
+      
+      lastIndex = match.index + match[0].length
+    }
+
+    // Add remaining text
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex))
+    }
+
+    return parts.length > 0 ? parts : text
   }
 
   useEffect(() => {
@@ -215,7 +254,9 @@ const ChatInterface = () => {
                   : 'bg-gray-100 text-gray-800'
               }`}
             >
-              <p className="text-sm whitespace-pre-wrap">{message.text}</p>
+              <p className="text-sm whitespace-pre-wrap">
+                {message.sender === 'ai' ? formatMessageWithLinks(message.text) : message.text}
+              </p>
               <p className="text-xs opacity-70 mt-1">
                 {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </p>
