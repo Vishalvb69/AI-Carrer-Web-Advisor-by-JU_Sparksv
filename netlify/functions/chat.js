@@ -1,37 +1,100 @@
-// Netlify Function for AI-powered career counseling chat
+﻿// Netlify Function for AI-powered career counseling chat
 import { checkRateLimit, getClientIP, sanitizeInput } from './utils/rateLimit.js';
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const RATE_LIMIT_ENABLED = process.env.RATE_LIMIT_CHAT_ENABLED === 'true';
 const MESSAGES_PER_HOUR = parseInt(process.env.RATE_LIMIT_MESSAGES_PER_HOUR) || 10;
 
-// Career counseling context for the AI
+// Career counseling context for the AI with website navigation
 const CAREER_CONTEXT = `
-You are an expert career counselor specializing in Indian education system and career guidance. You help students with:
+You are an expert career counselor for an AI Career Counseling Website specializing in Indian education system. 
 
-1. Stream selection after Class 10 (Science PCM/PCB, Commerce, Arts)
-2. Career opportunities in different fields
-3. Entrance exam guidance (JEE, NEET, CAT, etc.)
-4. College selection and admission processes
-5. AI impact on future careers
-6. Skill development recommendations
+**YOUR PRIMARY GOAL**: Help students find the RIGHT career path and GUIDE them to relevant pages on THIS WEBSITE.
 
-Key Information:
-- Engineering: Science PCM → JEE Main/Advanced → IITs/NITs/Private colleges
-- Medical: Science PCB → NEET UG → MBBS/BDS/AYUSH → AIIMS/Government/Private medical colleges
-- Commerce: CA, CS, MBA paths → CAT/XAT for MBA, Foundation courses for CA/CS
-- Arts: Psychology, Journalism, Design, Civil Services → Various entrance exams
+**AVAILABLE PAGES ON OUR WEBSITE** (Always provide these links when relevant):
 
-Important Guidelines:
-- Always be encouraging and supportive
-- Provide specific, actionable advice
-- Mention both opportunities and challenges honestly
-- Consider family financial situation sensitively
-- Emphasize the importance of both passion and practical considerations
-- Stay updated with current Indian education trends
-- Be aware of reservation policies and their impact
+ **ENGINEERING CAREERS** (for Science PCM students):
+   - Computer Science: /career/computer-science
+   - Mechanical Engineering: /career/mechanical-engineering
+   - Civil Engineering: /career/civil-engineering
+   - Electrical Engineering: /career/electrical-engineering
+   - Chemical Engineering: /career/chemical-engineering
+   - Aerospace Engineering: /career/aerospace-engineering
+   - Biotechnology: /career/biotechnology-engineering
 
-Keep responses conversational, helpful, and under 300 words unless the user asks for detailed information.
+ **MEDICAL CAREERS** (for Science PCB students):
+   - MBBS: /career/mbbs
+   - Dentistry: /career/dentistry
+   - Pharmacy: /career/pharmacy
+   - Nursing: /career/nursing
+   - Physiotherapy: /career/physiotherapy
+
+ **COMMERCE CAREERS**:
+   - Chartered Accountant: /career/ca
+   - Company Secretary: /career/cs
+   - BBA/MBA: /career/bba
+   - Investment Banking: /career/investment-banking
+
+ **ARTS & HUMANITIES**:
+   - Psychology: /career/psychology
+   - Journalism: /career/journalism
+   - Design: /career/design
+   - Architecture: /career/architecture
+   - Fashion Design: /career/fashion-design
+   - Teaching: /career/teacher
+
+ **EMERGING CAREERS** (/emerging-careers):
+   - Content Creator: /career/content-creator
+   - Esports Professional: /career/esports
+   - Professional Athlete: /career/professional-athlete
+   - Professional Cricketer: /career/professional-cricketer
+   - Musician: /career/musician
+   - Professional Dancer: /career/professional-dancer
+   - Standup Comedy: /career/standup-comedy
+   - Professional Chef: /career/professional-chef
+   - Makeup Artist: /career/makeup-artist
+   - Hair Stylist: /career/hair-stylist
+   - Professional Model: /career/professional-model
+   - Event Management: /career/event-management
+   - Hotel Management: /career/hotel-management
+
+ **STREAM SELECTION**: /stream-selection (for Class 10 students)
+ **AI IMPACT ON CAREERS**: /ai-impact
+ **RESOURCES**: /resources (exam prep, study materials)
+
+**HOW TO RESPOND**:
+1. Listen to student's interests, strengths, and situation
+2. Suggest 2-3 relevant career options from OUR WEBSITE
+3. **ALWAYS include direct links** like: "Learn more about Computer Science: /career/computer-science"
+4. Mention entrance exams (JEE, NEET, CAT, etc.) when relevant
+5. Be encouraging but realistic about challenges
+6. Consider financial situation sensitively
+
+**EXAMPLE RESPONSES**:
+Student: "I love coding and math"
+You: "Great! Based on your interests, Computer Science Engineering could be perfect for you. Check out our detailed guide: /career/computer-science
+
+Also explore Mechanical Engineering (/career/mechanical-engineering) which involves programming + hardware design.
+
+For Class 10 students, choose Science PCM stream: /stream-selection"
+
+Student: "I want to help people and interested in medicine"
+You: "That's wonderful! Here are medical careers on our website:
+- MBBS (Doctor): /career/mbbs
+- Nursing: /career/nursing  
+- Pharmacy: /career/pharmacy
+
+Each page has exam details, college lists, and career paths. Start with MBBS page for comprehensive info!"
+
+**KEY RULES**:
+ ALWAYS suggest pages from our website
+ Provide clickable paths like /career/computer-science
+ Mention 2-3 options, not just one
+ Keep responses under 300 words
+ Be supportive and practical
+ Guide them to explore our website pages
+
+Remember: Your job is to NAVIGATE students to the RIGHT PAGES on our website where they'll find detailed information!
 `;
 
 export async function handler(event, context) {
@@ -76,7 +139,7 @@ export async function handler(event, context) {
 
     // Validate input
     const { message, conversationHistory = [] } = body;
-    
+
     if (!message || typeof message !== 'string') {
       return {
         statusCode: 400,
@@ -89,7 +152,7 @@ export async function handler(event, context) {
     if (RATE_LIMIT_ENABLED) {
       const clientIP = getClientIP(event.headers);
       const rateLimitResult = await checkRateLimit(clientIP, MESSAGES_PER_HOUR);
-      
+
       if (!rateLimitResult.allowed) {
         return {
           statusCode: 429,
@@ -99,7 +162,7 @@ export async function handler(event, context) {
             'X-RateLimit-Remaining': '0',
             'X-RateLimit-Reset': new Date(Date.now() + rateLimitResult.resetIn).toISOString()
           },
-          body: JSON.stringify({ 
+          body: JSON.stringify({
             error: 'Rate limit exceeded. Please try again later.',
             resetIn: Math.ceil(rateLimitResult.resetIn / 1000 / 60) // minutes
           })
@@ -118,58 +181,74 @@ export async function handler(event, context) {
     }
 
     // Check if API key is available
-    if (!GEMINI_API_KEY) {
+    if (!OPENROUTER_API_KEY) {
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({ 
-          error: 'AI service temporarily unavailable. Please try again later.' 
+          error: 'AI service temporarily unavailable. Please try again later.'
         })
       };
     }
 
-    // Prepare conversation for Gemini API
-    const conversationText = conversationHistory.slice(-10)
-      .map(msg => `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`)
-      .join('\n') + `\nUser: ${sanitizedMessage}`;
+    // Prepare messages for OpenRouter API
+    const messages = [
+      {
+        role: 'system',
+        content: CAREER_CONTEXT
+      },
+      ...conversationHistory.slice(-10),
+      {
+        role: 'user',
+        content: sanitizedMessage
+      }
+    ];
 
-    const fullPrompt = `${CAREER_CONTEXT}\n\nConversation:\n${conversationText}\n\nAssistant:`;
-
-    // Call Gemini API
-    const geminiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+    // Call OpenRouter API with DeepSeek R1 model
+    const openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://ai-career-counselor.netlify.app',
+        'X-Title': 'AI Career Counselor'
       },
       body: JSON.stringify({
-        contents: [{
-          parts: [{
-            text: fullPrompt
-          }]
-        }],
-        generationConfig: {
-          maxOutputTokens: 500,
-          temperature: 0.7,
-          topP: 0.8,
-          topK: 40
-        }
+        model: 'deepseek/deepseek-r1-0528:free',
+        messages: messages,
+        max_tokens: 800,
+        temperature: 0.7,
+        top_p: 0.9
       })
     });
 
-    if (!geminiResponse.ok) {
-      const errorData = await geminiResponse.text();
-      console.error('Gemini API error:', errorData);
+    if (!openRouterResponse.ok) {
+      const errorData = await openRouterResponse.text();
+      console.error('OpenRouter API error:', errorData);
       return {
         statusCode: 500,
         headers,
-        body: JSON.stringify({ 
-          error: 'AI service error. Please try again in a moment.' 
+        body: JSON.stringify({
+          error: 'The AI service returned an invalid response. This usually means the API keys need to be updated. Please ensure OPENROUTER_API_KEY is valid and has active credits.'
         })
       };
     }
 
-    const geminiData = await geminiResponse.json();
-    const aiResponse = geminiData.candidates[0].content.parts[0].text;
+    const openRouterData = await openRouterResponse.json();
+    
+    // Check if response has the expected structure
+    if (!openRouterData.choices || !openRouterData.choices[0] || !openRouterData.choices[0].message) {
+      console.error('Invalid OpenRouter response structure:', openRouterData);
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          error: 'Received an unexpected response format from the AI service. Please try again.'
+        })
+      };
+    }
+
+    const aiResponse = openRouterData.choices[0].message.content;
 
     // Return successful response
     return {
@@ -187,8 +266,8 @@ export async function handler(event, context) {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ 
-        error: 'Internal server error. Please try again later.' 
+      body: JSON.stringify({
+        error: 'Internal server error. Please try again later.'
       })
     };
   }
