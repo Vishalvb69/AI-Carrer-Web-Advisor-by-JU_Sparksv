@@ -1,6 +1,7 @@
 ﻿// Netlify Function for AI-powered career counseling chat
 import { checkRateLimit, getClientIP, sanitizeInput } from './utils/rateLimit.js';
 
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const RATE_LIMIT_ENABLED = process.env.RATE_LIMIT_CHAT_ENABLED === 'true';
 const MESSAGES_PER_HOUR = parseInt(process.env.RATE_LIMIT_MESSAGES_PER_HOUR) || 10;
@@ -181,7 +182,7 @@ export async function handler(event, context) {
     }
 
     // Check if API key is available
-    if (!OPENROUTER_API_KEY) {
+    if (!GROQ_API_KEY) {
       return {
         statusCode: 500,
         headers,
@@ -204,17 +205,15 @@ export async function handler(event, context) {
       }
     ];
 
-    // Call OpenRouter API with DeepSeek R1 model
-    const openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    // Call Groq API
+    const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://ai-career-counselor.netlify.app',
-        'X-Title': 'AI Career Counselor'
+        'Authorization': `Bearer ${GROQ_API_KEY}`,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'deepseek/deepseek-r1-0528:free',
+        model: 'llama-3.3-70b-versatile',
         messages: messages,
         max_tokens: 800,
         temperature: 0.7,
@@ -222,23 +221,25 @@ export async function handler(event, context) {
       })
     });
 
-    if (!openRouterResponse.ok) {
-      const errorData = await openRouterResponse.text();
-      console.error('OpenRouter API error:', errorData);
+    if (!groqResponse.ok) {
+      const errorData = await groqResponse.text();
+      console.error('Groq API error:', errorData);
       return {
         statusCode: 500,
         headers,
         body: JSON.stringify({
-          error: 'The AI service returned an invalid response. This usually means the API keys need to be updated. Please ensure OPENROUTER_API_KEY is valid and has active credits.'
+          error: 'AI service error. Please try again in a moment.'
         })
       };
     }
 
-    const openRouterData = await openRouterResponse.json();
+    const groqData = await groqResponse.json();
+    
+    // ChegroqData = await groqResponse.json();
     
     // Check if response has the expected structure
-    if (!openRouterData.choices || !openRouterData.choices[0] || !openRouterData.choices[0].message) {
-      console.error('Invalid OpenRouter response structure:', openRouterData);
+    if (!groqData.choices || !groqData.choices[0] || !groqData.choices[0].message) {
+      console.error('Invalid Groq response structure:', groqData);
       return {
         statusCode: 500,
         headers,
@@ -248,7 +249,7 @@ export async function handler(event, context) {
       };
     }
 
-    const aiResponse = openRouterData.choices[0].message.content;
+    const aiResponse = groqData.choices[0].message.content;
 
     // Return successful response
     return {

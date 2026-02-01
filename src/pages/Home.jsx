@@ -11,7 +11,8 @@ import {
   ArrowRight,
   CheckCircle,
   Star,
-  Sparkles
+  Sparkles,
+  GraduationCap
 } from 'lucide-react'
 
 const Home = () => {
