@@ -117,16 +117,8 @@ const ChatInterface = () => {
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
       console.error("Chat error:", error);
-      let errorText =
+      const errorText = error.message || 
         "Sorry, I'm having trouble responding right now. Please try again in a moment.";
-
-      if (error instanceof SyntaxError) {
-        console.error(
-          "JSON parsing failed - API may have returned invalid response",
-        );
-        errorText =
-          "The AI service returned an invalid response. This usually means the API keys need to be updated. Please ensure OPENROUTER_API_KEY is valid and has active credits.";
-      }
 
       const errorMessage = {
         id: Date.now() + 1,
