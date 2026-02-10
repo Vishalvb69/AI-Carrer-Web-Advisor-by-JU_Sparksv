@@ -323,7 +323,7 @@ const EsportsDetails = () => {
                   <div className="flex-1">
                     <div className="font-semibold text-indigo-900 text-lg">Build Online Presence (Ongoing)</div>
                     <div className="text-gray-700 mt-1">Stream on YouTube/Facebook, post highlights, grow followers. This is CRUCIAL for income.</div>
-                    <div className="text-sm text-indigo-700 mt-2">🎥 Consistency > Quality initially</div>
+                    <div className="text-sm text-indigo-700 mt-2">🎥 Consistency &gt; Quality initially</div>
                   </div>
                 </div>
 
