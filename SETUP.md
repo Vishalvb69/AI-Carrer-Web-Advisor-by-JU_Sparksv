@@ -77,7 +77,7 @@ System always has a safe path → User always gets a response
 ## Testing
 
 ### With Credits:
-Chat will use Claude AI for personalized responses
+Chat will use GROQ AI (Llama 3.3 70B) for personalized responses
 
 ### Without Credits:
 Chat will use fallback knowledge base for instant responses

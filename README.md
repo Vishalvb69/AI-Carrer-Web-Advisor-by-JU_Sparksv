@@ -6,7 +6,7 @@ A comprehensive, responsive career counseling website designed specifically for 
 
 - **Mobile-First Design**: Optimized for mobile devices with responsive layout
 - **Stream-Based Guidance**: Comprehensive information for Engineering, Medical, Commerce, and Arts streams
-- **AI-Powered Chat**: Interactive career counseling with Claude AI assistant
+- **AI-Powered Chat**: Interactive career counseling with GROQ AI (Llama 3.3 70B) - free API available!
 - **Entrance Exam Info**: Detailed information about JEE, NEET, CA Foundation, CAT, and more
 - **Career Exploration**: Extensive database of career options with salary ranges and growth prospects
 - **AI Impact Analysis**: Future-ready insights on how AI affects different careers
@@ -18,7 +18,7 @@ A comprehensive, responsive career counseling website designed specifically for 
 
 - Node.js 16+ and npm
 - Netlify account for deployment
-- Anthropic API key for AI chat functionality
+- GROQ API key for AI chat functionality (FREE - get from https://console.groq.com)
 
 ### Installation
 
@@ -32,8 +32,11 @@ A comprehensive, responsive career counseling website designed specifically for 
 2. **Environment Variables**
    Create a `.env` file in the root directory:
    ```env
-   ANTHROPIC_API_KEY=your_anthropic_api_key_here
+   GROQ_API_KEY=your_groq_api_key_here
+   OPENROUTER_API_KEY=your_openrouter_api_key_here  # Optional for RAG chat
    ```
+   
+   **Get FREE GROQ API Key**: Visit [https://console.groq.com/keys](https://console.groq.com/keys) and sign up for a free account!
 
 3. **Development Server**
    ```bash
@@ -115,8 +118,11 @@ The website is built with mobile app conversion in mind:
 2. **Environment Variables**
    In Netlify dashboard, add:
    ```
-   ANTHROPIC_API_KEY = your_anthropic_api_key_here
+   GROQ_API_KEY = your_groq_api_key_here
+   OPENROUTER_API_KEY = your_openrouter_api_key_here
    ```
+   
+   **Get FREE GROQ API Key**: [https://console.groq.com/keys](https://console.groq.com/keys)
 
 3. **Deploy**
    - Netlify will automatically build and deploy
@@ -207,8 +213,22 @@ For support and questions:
 - [Netlify Documentation](https://docs.netlify.com/)
 - [React Documentation](https://reactjs.org/docs/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Anthropic Claude API](https://docs.anthropic.com/)
+- [GROQ API Documentation](https://console.groq.com/docs) - Free AI API!
+- [OpenRouter API](https://openrouter.ai/docs)
 
 ---
 
-Built with ❤️ for Indian students by [Your Team Name]
+## 👥 Team JU_Sparks
+
+Built with ❤️ for Indian students by:
+
+- **[Vishal Bhatia](https://github.com/Vishalvb69)** - Lead Developer & Project Architect
+- **Praduman** - Backend Development & RAG Features
+- **Pranjal** - Frontend Development & UI/UX
+
+### 🌟 Project Repository
+[AI Career Counselor - JU_Sparks](https://github.com/Vishalvb69/AI-Carrer-Web-Advisor-by-JU_Sparksv)
+
+---
+
+**Note**: This project uses FREE GROQ API for AI-powered career counseling. Anyone can clone this repository and run it with their own free GROQ API key!

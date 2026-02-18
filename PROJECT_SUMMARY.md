@@ -6,7 +6,7 @@ You now have a **complete, production-ready career counseling website** specific
 
 ### ✨ Key Features
 - **🎯 Stream-Specific Guidance**: Comprehensive information for Engineering, Medical, Commerce, and Arts streams
-- **🤖 AI-Powered Chat**: Interactive career counseling using Claude AI with intelligent responses
+- **🤖 AI-Powered Chat**: Interactive career counseling using GROQ AI (Llama 3.3 70B) with intelligent responses
 - **📱 Mobile-First Design**: Optimized for Indian youth who primarily use mobile devices
 - **🎯 Entrance Exam Hub**: Detailed info about JEE, NEET, CA Foundation, CAT, and more
 - **💼 Career Database**: 100+ career options with salary ranges, growth prospects, and AI impact
@@ -22,7 +22,7 @@ You now have a **complete, production-ready career counseling website** specific
 
 ### Backend (Netlify Functions)
 - **Serverless**: No server maintenance required
-- **AI Integration**: Claude API for intelligent career counseling
+- **AI Integration**: GROQ API (Llama 3.3 70B) for intelligent career counseling - FREE!
 - **Security**: Rate limiting, input sanitization, CORS protection
 - **Scalable**: Automatically scales with user demand
 
@@ -63,8 +63,9 @@ npm run dev
 ```
 
 ### 2. Get AI Chat Working
-- Sign up for Anthropic API key
-- Add to `.env`: `ANTHROPIC_API_KEY=your_key`
+- Sign up for FREE GROQ API key at https://console.groq.com/keys
+- Add to `.env`: `GROQ_API_KEY=your_key`
+- (Optional) Add `OPENROUTER_API_KEY` for RAG features
 
 ### 3. Deploy to Netlify
 - Connect GitHub repo to Netlify

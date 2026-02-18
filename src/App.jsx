@@ -23,6 +23,7 @@ import ArchitectureDetails from './pages/careers/ArchitectureDetails'
 import AerospaceEngineeringDetails from './pages/careers/AerospaceEngineeringDetails'
 import ChemicalEngineeringDetails from './pages/careers/ChemicalEngineeringDetails'
 import BiotechnologyEngineeringDetails from './pages/careers/BiotechnologyEngineeringDetails'
+import DataScientistMLDetails from './pages/careers/DataScientistMLDetails'
 
 // Medical Career Details
 import MBBSDetails from './pages/careers/MBBSDetails'
@@ -94,6 +95,7 @@ function App() {
             <Route path="/career/aerospace-engineering" element={<AerospaceEngineeringDetails />} />
             <Route path="/career/chemical-engineering" element={<ChemicalEngineeringDetails />} />
             <Route path="/career/biotechnology-engineering" element={<BiotechnologyEngineeringDetails />} />
+            <Route path="/career/data-scientist-ml" element={<DataScientistMLDetails />} />
             
             {/* Medical Career Detail Routes */}
             <Route path="/career/doctor-mbbs" element={<MBBSDetails />} />

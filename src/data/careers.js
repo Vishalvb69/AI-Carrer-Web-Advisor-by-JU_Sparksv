@@ -152,6 +152,25 @@ export const careersByStream = {
       pros: ['Cutting-edge science', 'Meaningful impact', 'Research scope', 'Global growth'],
       cons: ['Low starting pay', 'Limited India jobs', 'Higher studies needed', 'Slow growth vs IT'],
       detailsUrl: '/career/biotechnology-engineering'
+    },
+    {
+      id: 'data-scientist-ml',
+      title: 'Data Scientist / ML Engineer',
+      description: 'Build AI/ML models, analyze large datasets, create predictive algorithms for business intelligence',
+      averageSalary: '₹10-30 LPA',
+      topSalary: '₹80+ LPA',
+      growthRate: '35%',
+      skills: ['Python/R', 'Machine Learning', 'Deep Learning', 'SQL', 'Statistics', 'TensorFlow/PyTorch'],
+      jobRoles: ['Data Scientist', 'ML Engineer', 'AI Researcher', 'Data Analyst', 'MLOps Engineer'],
+      companies: ['Google', 'Microsoft', 'Amazon', 'Flipkart', 'Swiggy', 'Ola', 'NVIDIA'],
+      aiImpact: 'Core field driving AI revolution - highest demand for next decade',
+      futureOutlook: 'Excellent',
+      education: 'B.Tech CSE/IT + certifications OR M.Tech AI/ML OR self-learning',
+      entranceExams: ['JEE Main', 'JEE Advanced', 'GATE'],
+      workEnvironment: 'Tech companies, startups, research labs, remote work',
+      pros: ['Highest salaries', 'Global demand', 'Cutting-edge tech', 'Remote opportunities'],
+      cons: ['Requires continuous learning', 'Competitive', 'Math-heavy', 'Constantly evolving'],
+      detailsUrl: '/career/data-scientist-ml'
     }
   ],
   

@@ -3,7 +3,8 @@
 ## ✅ Pre-Deployment Checklist
 
 ### 1. Environment Setup
-- [ ] Create Anthropic account and get API key
+- [ ] Create GROQ account and get FREE API key from https://console.groq.com/keys
+- [ ] (Optional) Create OpenRouter account for RAG features
 - [ ] Set up Netlify account
 - [ ] Prepare repository for deployment
 
@@ -33,8 +34,13 @@
 ### Step 2: Environment Variables
 In Netlify dashboard → Site settings → Environment variables, add:
 ```
-ANTHROPIC_API_KEY = your_actual_anthropic_api_key_here
+GROQ_API_KEY = your_actual_groq_api_key_here
+OPENROUTER_API_KEY = your_openrouter_api_key_here  # Optional for RAG chat
+RATE_LIMIT_MAX_REQUESTS = 10
+RATE_LIMIT_WINDOW_HOURS = 1
 ```
+
+**Get FREE GROQ API Key**: Visit [https://console.groq.com/keys](https://console.groq.com/keys)
 
 ### Step 3: Deploy
 1. Trigger deployment
@@ -76,14 +82,17 @@ ANTHROPIC_API_KEY = your_actual_anthropic_api_key_here
 
 ### Required Variables
 ```env
-# Essential for AI chat functionality
-ANTHROPIC_API_KEY=sk-ant-api...
+# Essential for AI chat functionality (FREE API!)
+GROQ_API_KEY=gsk_...  # Get from https://console.groq.com/keys
+
+# Optional for RAG chat features
+OPENROUTER_API_KEY=sk-or-v1-...  # Get from https://openrouter.ai/keys
 
 # Optional rate limiting configuration
 RATE_LIMIT_MAX_REQUESTS=10        # messages per hour
 RATE_LIMIT_WINDOW_HOURS=1         # time window
 MAX_MESSAGE_LENGTH=500            # character limit
-MAX_CONVERSATION_HISTORY=20       # messages to remember
+MAX_CONVERSATION_HISTORY=10       # messages to remember
 ```
 
 ## 🚨 Troubleshooting Common Issues
@@ -159,8 +168,8 @@ MAX_CONVERSATION_HISTORY=20       # messages to remember
 - [ ] Update career information quarterly
 
 ### Emergency Contacts
-- Technical Issues: [Your Contact]
-- API Issues: [Anthropic Support]
+- Technical Issues: [Team JU_Sparks]
+- API Issues: [GROQ Support - https://console.groq.com]
 - Hosting Issues: [Netlify Support]
 
 ## 🎯 Success Metrics
