@@ -1,5 +1,6 @@
 ﻿// Netlify Function for AI-powered career counseling chat
 import { checkRateLimit, getClientIP, sanitizeInput } from './utils/rateLimit.js';
+import { isCollegeQuery, handleCollegeQuery } from './utils/collegeQueries.js';
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
@@ -63,6 +64,13 @@ You are an expert career counselor for an AI Career Counseling Website specializ
  **AI IMPACT ON CAREERS**: /ai-impact
  **RESOURCES**: /resources (exam prep, study materials)
 
+ **ENGINEERING COLLEGES DATABASE**:
+   - 100 top engineering colleges (NIRF 2025)
+   - 23 IITs, 31 NITs, 7 IIITs
+   - Search by state, category, rank
+   - View colleges: /resources#colleges or /engineering#colleges
+   - State-wise colleges: Maharashtra (12), Tamil Nadu (11), Karnataka (8), UP (8)
+
 **HOW TO RESPOND**:
 1. Listen to student's interests, strengths, and situation
 2. Suggest 2-3 relevant career options from OUR WEBSITE
@@ -93,8 +101,8 @@ Each page has exam details, college lists, and career paths. Start with MBBS pag
  Mention 2-3 options, not just one
  Keep responses under 300 words
  Be supportive and practical
- Guide them to explore our website pages
-
+ Guide them to explore our website pages ✅ For college queries, direct to /resources#colleges or /engineering#colleges
+ ✅ Mention we have 100 top engineering colleges with search & filters
 Remember: Your job is to NAVIGATE students to the RIGHT PAGES on our website where they'll find detailed information!
 `;
 
@@ -178,6 +186,22 @@ export async function handler(event, context) {
         statusCode: 400,
         headers,
         body: JSON.stringify({ error: 'Message cannot be empty after sanitization' })
+      };
+    }
+
+    // Check if this is a college-specific query
+    const isCollegeSpecificQuery = isCollegeQuery(sanitizedMessage);
+    if (isCollegeSpecificQuery) {
+      const collegeResponse = handleCollegeQuery(sanitizedMessage);
+      return {
+        statusCode: 200,
+        headers,
+        body: JSON.stringify({
+          response: collegeResponse,
+          messageCount: conversationHistory.length + 1,
+          timestamp: new Date().toISOString(),
+          source: 'college-database'
+        })
       };
     }
 

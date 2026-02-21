@@ -185,11 +185,12 @@ const ChatInterface = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 bg-primary-600 text-white p-4 rounded-full shadow-lg hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 transition-all duration-200 z-50 group"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary-600 text-white p-3 sm:p-4 rounded-full shadow-xl hover:bg-primary-700 focus:ring-4 focus:ring-primary-300 transition-all duration-200 z-[9999] group hover:scale-110"
         aria-label="Open chat"
+        style={{ touchAction: 'manipulation' }}
       >
-        <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
-        <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
+        <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 bg-red-500 text-white text-[10px] sm:text-xs rounded-full h-4 w-4 sm:h-5 sm:w-5 flex items-center justify-center animate-pulse font-bold">
           AI
         </div>
       </button>
@@ -197,24 +198,24 @@ const ChatInterface = () => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 w-96 max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-2xl border border-gray-200 z-50 flex flex-col max-h-[32rem]">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-[calc(100vw-2rem)] sm:w-96 max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-2xl border border-gray-200 z-[9999] flex flex-col max-h-[85vh] sm:max-h-[32rem]">
       {/* Header */}
-      <div className="bg-primary-600 text-white p-4 rounded-t-xl flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <div className="bg-white/20 p-2 rounded-lg">
-            <Bot className="h-5 w-5" />
+      <div className="bg-primary-600 text-white p-3 sm:p-4 rounded-t-xl flex items-center justify-between">
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          <div className="bg-white/20 p-1.5 sm:p-2 rounded-lg">
+            <Bot className="h-4 w-4 sm:h-5 sm:w-5" />
           </div>
           <div>
-            <h3 className="font-semibold">AI Career Counselor</h3>
-            <p className="text-xs text-blue-100">Get instant career guidance</p>
+            <h3 className="text-sm sm:text-base font-semibold">AI Career Counselor</h3>
+            <p className="text-[10px] sm:text-xs text-blue-100">Get instant career guidance</p>
           </div>
         </div>
         <button
           onClick={() => setIsOpen(false)}
-          className="text-blue-100 hover:text-white transition-colors"
+          className="text-blue-100 hover:text-white transition-colors p-1"
           aria-label="Close chat"
         >
-          <X className="h-5 w-5" />
+          <X className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
       </div>
 
@@ -231,7 +232,7 @@ const ChatInterface = () => {
       )}
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0" style={{ maxHeight: '20rem' }}>
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 min-h-0" style={{ maxHeight: '50vh' }}>
         {messages.map((message) => (
           <div
             key={message.id}
@@ -246,7 +247,7 @@ const ChatInterface = () => {
             )}
             
             <div
-              className={`max-w-xs px-4 py-2 rounded-lg ${
+              className={`max-w-[75%] sm:max-w-xs px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm ${
                 message.sender === 'user'
                   ? 'bg-primary-600 text-white'
                   : message.isError
@@ -254,7 +255,7 @@ const ChatInterface = () => {
                   : 'bg-gray-100 text-gray-800'
               }`}
             >
-              <p className="text-sm whitespace-pre-wrap">
+              <p className="text-xs sm:text-sm whitespace-pre-wrap break-words">
                 {message.sender === 'ai' ? formatMessageWithLinks(message.text) : message.text}
               </p>
               <p className="text-xs opacity-70 mt-1">
@@ -309,8 +310,8 @@ const ChatInterface = () => {
       )}
 
       {/* Input area */}
-      <div className="p-4 border-t border-gray-200">
-        <div className="flex space-x-2">
+      <div className="p-3 sm:p-4 border-t border-gray-200">
+        <div className="flex space-x-1.5 sm:space-x-2">
           <input
             ref={inputRef}
             type="text"

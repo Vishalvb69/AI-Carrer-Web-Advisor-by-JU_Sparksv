@@ -11,12 +11,20 @@ import {
   Users,
   Award,
   Target,
-  CheckCircle
+  CheckCircle,
+  MapPin,
+  Building2,
+  TrendingUp,
+  Star
 } from 'lucide-react'
+import { colleges, collegeCategories, states } from '../data/colleges'
 
 const Resources = () => {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCollegeCategory, setSelectedCollegeCategory] = useState('all')
+  const [selectedState, setSelectedState] = useState('All States')
+  const [collegeSearchTerm, setCollegeSearchTerm] = useState('')
 
   const categories = [
     { id: 'all', label: 'All Resources' },
@@ -142,6 +150,29 @@ const Resources = () => {
     const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          resource.description.toLowerCase().includes(searchTerm.toLowerCase())
     return matchesCategory && matchesSearch
+  })
+
+  // Filter colleges based on category, state, and search
+  const filteredColleges = colleges.filter(college => {
+    const matchesCategory = selectedCollegeCategory === 'all' || 
+                           college.category.map(c => c.toLowerCase()).includes(selectedCollegeCategory) ||
+                           (selectedCollegeCategory === 'iit' && college.type === 'IIT') ||
+                           (selectedCollegeCategory === 'nit' && college.type === 'NIT') ||
+                           (selectedCollegeCategory === 'iiit' && college.category.includes('IIIT')) ||
+                           (selectedCollegeCategory === 'government' && college.ownership.includes('Government')) ||
+                           (selectedCollegeCategory === 'private' && (college.ownership === 'Private' || college.ownership === 'Private (PPP)')) ||
+                           (selectedCollegeCategory === 'top10' && college.rank <= 10) ||
+                           (selectedCollegeCategory === 'top20' && college.rank <= 20) ||
+                           (selectedCollegeCategory === 'top50' && college.rank <= 50)
+    
+    const matchesState = selectedState === 'All States' || college.state === selectedState
+    
+    const matchesSearch = college.name.toLowerCase().includes(collegeSearchTerm.toLowerCase()) ||
+                         college.shortName.toLowerCase().includes(collegeSearchTerm.toLowerCase()) ||
+                         college.city.toLowerCase().includes(collegeSearchTerm.toLowerCase()) ||
+                         college.state.toLowerCase().includes(collegeSearchTerm.toLowerCase())
+    
+    return matchesCategory && matchesState && matchesSearch
   })
 
   return (
@@ -303,8 +334,170 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Official Exam Links */}
+      {/* Top Engineering Colleges Section */}
       <section className="py-16 bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="section-header">Top Engineering Colleges in India</h2>
+            <p className="text-body max-w-3xl mx-auto">
+              Explore India's top engineering colleges based on NIRF 2025 rankings with official website links
+            </p>
+          </div>
+
+          {/* College Filters */}
+          <div className="mb-8 space-y-6">
+            {/* Search Bar */}
+            <div className="relative max-w-2xl mx-auto">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+              <input
+                type="text"
+                placeholder="Search by college name, city, or state..."
+                value={collegeSearchTerm}
+                onChange={(e) => setCollegeSearchTerm(e.target.value)}
+                className="input-field pl-12 text-center"
+              />
+            </div>
+
+            {/* Category Filters */}
+            <div className="flex flex-wrap justify-center gap-2">
+              {collegeCategories.map(category => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCollegeCategory(category.id)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    selectedCollegeCategory === category.id
+                      ? 'bg-primary-600 text-white shadow-md scale-105'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+                >
+                  {category.name}
+                  <span className="ml-2 text-xs opacity-75">({category.count})</span>
+                </button>
+              ))}
+            </div>
+
+            {/* State Filter */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                <select
+                  value={selectedState}
+                  onChange={(e) => setSelectedState(e.target.value)}
+                  className="pl-10 pr-8 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                >
+                  {states.map(state => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Results Count */}
+            <p className="text-center text-gray-600 text-sm">
+              Showing <span className="font-semibold text-primary-600">{filteredColleges.length}</span> colleges
+            </p>
+          </div>
+
+          {/* Colleges Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredColleges.slice(0, 30).map(college => (
+              <div key={college.id} className="card group hover:border-primary-300 hover:shadow-xl transition-all duration-300">
+                {/* Rank Badge */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`flex items-center justify-center w-12 h-12 rounded-lg font-bold text-white ${
+                    college.rank <= 10 ? 'bg-gradient-to-br from-yellow-400 to-orange-500' :
+                    college.rank <= 20 ? 'bg-gradient-to-br from-gray-400 to-gray-600' :
+                    college.rank <= 50 ? 'bg-gradient-to-br from-orange-400 to-orange-600' :
+                    'bg-gradient-to-br from-blue-500 to-primary-600'
+                  }`}>
+                    <div className="text-center">
+                      <div className="text-xs opacity-90">Rank</div>
+                      <div className="text-lg leading-none">{college.rank}</div>
+                    </div>
+                  </div>
+                  {college.rank <= 10 && (
+                    <Star className="h-6 w-6 text-yellow-500 fill-current" />
+                  )}
+                </div>
+
+                {/* College Name */}
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                  {college.shortName}
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 line-clamp-2">{college.name}</p>
+
+                {/* Location & Type */}
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <MapPin className="h-4 w-4 mr-2 text-gray-400" />
+                    <span>{college.city}, {college.state}</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Building2 className="h-4 w-4 mr-2 text-gray-400" />
+                    <span>{college.ownership}</span>
+                  </div>
+                  <div className="flex items-center text-sm text-gray-600">
+                    <TrendingUp className="h-4 w-4 mr-2 text-gray-400" />
+                    <span>NIRF Score: {college.score}</span>
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    college.type === 'IIT' ? 'bg-blue-100 text-blue-800' :
+                    college.type === 'NIT' ? 'bg-green-100 text-green-800' :
+                    college.ownership.includes('Government') ? 'bg-purple-100 text-purple-800' :
+                    'bg-orange-100 text-orange-800'
+                  }`}>
+                    {college.type}
+                  </span>
+                  {college.rank <= 10 && (
+                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">
+                      Top 10
+                    </span>
+                  )}
+                </div>
+
+                {/* Official Website Link */}
+                <a
+                  href={college.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-full px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors group-hover:shadow-md"
+                >
+                  <span className="font-medium">Visit Official Website</span>
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* No Results */}
+          {filteredColleges.length === 0 && (
+            <div className="text-center py-12">
+              <Building2 className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No colleges found</h3>
+              <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+            </div>
+          )}
+
+          {/* Show More Button */}
+          {filteredColleges.length > 30 && (
+            <div className="text-center mt-8">
+              <p className="text-gray-600 mb-4">
+                Showing 30 of {filteredColleges.length} colleges
+              </p>
+              <button className="btn-secondary">
+                Load More Colleges
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Official Exam Links */}
+      <section className="py-16 bg-gray-50">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="section-header">Official Exam Websites</h2>

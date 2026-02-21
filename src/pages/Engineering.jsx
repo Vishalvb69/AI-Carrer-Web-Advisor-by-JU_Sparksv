@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import CareerCard from '../components/CareerCard'
 import { careersByStream } from '../data/careers'
 import { examsByStream } from '../data/exams'
+import { colleges, collegeCategories, states } from '../data/colleges'
 import { 
   GraduationCap, 
   TrendingUp, 
@@ -18,12 +19,19 @@ import {
   CheckCircle,
   Calendar,
   MapPin,
-  DollarSign
+  DollarSign,
+  Building2,
+  Star,
+  ExternalLink,
+  Search
 } from 'lucide-react'
 
 const Engineering = () => {
   const [selectedTab, setSelectedTab] = useState('careers')
   const [selectedCareer, setSelectedCareer] = useState(null)
+  const [selectedCollegeCategory, setSelectedCollegeCategory] = useState('all')
+  const [selectedState, setSelectedState] = useState('All States')
+  const [collegeSearchTerm, setCollegeSearchTerm] = useState('')
   
   const engineeringCareers = careersByStream.engineering
   const engineeringExams = examsByStream.engineering
@@ -31,9 +39,32 @@ const Engineering = () => {
   const tabs = [
     { id: 'careers', label: 'Career Paths', icon: <GraduationCap className="h-4 w-4" /> },
     { id: 'exams', label: 'Entrance Exams', icon: <BookOpen className="h-4 w-4" /> },
+    { id: 'colleges', label: 'Top Colleges', icon: <Building2 className="h-4 w-4" /> },
     { id: 'counseling', label: 'Counseling Process', icon: <Target className="h-4 w-4" /> },
     { id: 'timeline', label: 'Important Dates', icon: <Calendar className="h-4 w-4" /> }
   ]
+
+  // Filter engineering colleges
+  const engineeringColleges = colleges.filter(college => {
+    const matchesCategory = selectedCollegeCategory === 'all' || 
+                           college.category.map(c => c.toLowerCase()).includes(selectedCollegeCategory) ||
+                           (selectedCollegeCategory === 'iit' && college.type === 'IIT') ||
+                           (selectedCollegeCategory === 'nit' && college.type === 'NIT') ||
+                           (selectedCollegeCategory === 'iiit' && college.category.includes('IIIT')) ||
+                           (selectedCollegeCategory === 'government' && college.ownership.includes('Government')) ||
+                           (selectedCollegeCategory === 'private' && (college.ownership === 'Private' || college.ownership === 'Private (PPP)')) ||
+                           (selectedCollegeCategory === 'top10' && college.rank <= 10) ||
+                           (selectedCollegeCategory === 'top20' && college.rank <= 20) ||
+                           (selectedCollegeCategory === 'top50' && college.rank <= 50)
+    
+    const matchesState = selectedState === 'All States' || college.state === selectedState
+    
+    const matchesSearch = college.name.toLowerCase().includes(collegeSearchTerm.toLowerCase()) ||
+                         college.shortName.toLowerCase().includes(collegeSearchTerm.toLowerCase()) ||
+                         college.city.toLowerCase().includes(collegeSearchTerm.toLowerCase())
+    
+    return matchesCategory && matchesState && matchesSearch
+  })
 
   const keyStats = [
     { label: 'Total Engineering Seats', value: '15+ Lakh', icon: <Users className="h-5 w-5" /> },
@@ -425,6 +456,189 @@ const Engineering = () => {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Colleges Tab */}
+          {selectedTab === 'colleges' && (
+            <div id="colleges">
+              <div className="text-center mb-12">
+                <h2 className="section-header">Top Engineering Colleges in India</h2>
+                <p className="text-body max-w-3xl mx-auto">
+                  Explore top engineering colleges (IITs, NITs, IIITs) based on NIRF 2025 rankings
+                </p>
+              </div>
+
+              {/* College Filters */}
+              <div className="mb-8 space-y-6">
+                {/* Search Bar */}
+                <div className="relative max-w-2xl mx-auto">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                  <input
+                    type="text"
+                    placeholder="Search colleges by name, city..."
+                    value={collegeSearchTerm}
+                    onChange={(e) => setCollegeSearchTerm(e.target.value)}
+                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                {/* Category Filters */}
+                <div className="flex flex-wrap justify-center gap-2">
+                  {collegeCategories.map(category => (
+                    <button
+                      key={category.id}
+                      onClick={() => setSelectedCollegeCategory(category.id)}
+                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        selectedCollegeCategory === category.id
+                          ? 'bg-blue-600 text-white shadow-md scale-105'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                    >
+                      {category.name}
+                      <span className="ml-2 text-xs opacity-75">({category.count})</span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* State Filter */}
+                <div className="flex justify-center">
+                  <div className="relative">
+                    <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+                    <select
+                      value={selectedState}
+                      onChange={(e) => setSelectedState(e.target.value)}
+                      className="pl-10 pr-8 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      {states.map(state => (
+                        <option key={state} value={state}>{state}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Results Count */}
+                <p className="text-center text-gray-600 text-sm">
+                  Showing <span className="font-semibold text-blue-600">{engineeringColleges.length}</span> colleges
+                </p>
+              </div>
+
+              {/* Colleges Grid */}
+              {engineeringColleges.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {engineeringColleges.slice(0, 30).map(college => (
+                    <div key={college.id} className="card group hover:border-blue-300 hover:shadow-xl transition-all duration-300">
+                      {/* Rank Badge */}
+                      <div className="flex items-start justify-between mb-4">
+                        <div className={`flex items-center justify-center w-12 h-12 rounded-lg font-bold text-white ${
+                          college.rank <= 10 ? 'bg-gradient-to-br from-yellow-400 to-orange-500' :
+                          college.rank <= 20 ? 'bg-gradient-to-br from-gray-400 to-gray-600' :
+                          college.rank <= 50 ? 'bg-gradient-to-br from-orange-400 to-orange-600' :
+                          'bg-gradient-to-br from-blue-500 to-blue-600'
+                        }`}>
+                          <div className="text-center">
+                            <div className="text-xs opacity-90">Rank</div>
+                            <div className="text-lg leading-none">{college.rank}</div>
+                          </div>
+                        </div>
+                        {college.rank <= 10 && (
+                          <Star className="h-6 w-6 text-yellow-500 fill-current" />
+                        )}
+                      </div>
+
+                      {/* College Name */}
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        {college.shortName}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-4 line-clamp-2">{college.name}</p>
+
+                      {/* Location & Type */}
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center text-sm text-gray-600">
+                          <MapPin className="h-4 w-4 mr-2 text-gray-400" />
+                          <span>{college.city}, {college.state}</span>
+                        </div>
+                        <div className="flex items-center text-sm text-gray-600">
+                          <Building2 className="h-4 w-4 mr-2 text-gray-400" />
+                          <span>{college.ownership}</span>
+                        </div>
+                        <div className="flex items-center text-sm text-gray-600">
+                          <TrendingUp className="h-4 w-4 mr-2 text-gray-400" />
+                          <span>NIRF Score: {college.score}</span>
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          college.type === 'IIT' ? 'bg-blue-100 text-blue-800' :
+                          college.type === 'NIT' ? 'bg-green-100 text-green-800' :
+                          college.ownership.includes('Government') ? 'bg-purple-100 text-purple-800' :
+                          'bg-orange-100 text-orange-800'
+                        }`}>
+                          {college.type}
+                        </span>
+                        {college.rank <= 10 && (
+                          <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">
+                            Top 10
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Official Website Link */}
+                      <a
+                        href={college.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors group-hover:shadow-md"
+                      >
+                        <span className="font-medium">Visit Official Website</span>
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12">
+                  <Building2 className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">No colleges found</h3>
+                  <p className="text-gray-600">Try adjusting your search or filter criteria</p>
+                </div>
+              )}
+
+              {/* Show More Info */}
+              {engineeringColleges.length > 30 && (
+                <div className="text-center mt-8">
+                  <p className="text-gray-600 mb-4">
+                    Showing 30 of {engineeringColleges.length} colleges
+                  </p>
+                  <Link
+                    to="/resources#colleges"
+                    className="btn-secondary"
+                  >
+                    View All Colleges
+                  </Link>
+                </div>
+              )}
+
+              {/* Additional Info */}
+              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="card border-l-4 border-blue-500">
+                  <h3 className="text-lg font-bold text-blue-600 mb-3">IITs</h3>
+                  <p className="text-2xl font-bold text-gray-900 mb-2">{colleges.filter(c => c.type === 'IIT').length}</p>
+                  <p className="text-sm text-gray-600">Institutes of National Importance with world-class faculty and research</p>
+                </div>
+                <div className="card border-l-4 border-green-500">
+                  <h3 className="text-lg font-bold text-green-600 mb-3">NITs</h3>
+                  <p className="text-2xl font-bold text-gray-900 mb-2">{colleges.filter(c => c.type === 'NIT').length}</p>
+                  <p className="text-sm text-gray-600">Premier technical institutes across all states of India</p>
+                </div>
+                <div className="card border-l-4 border-purple-500">
+                  <h3 className="text-lg font-bold text-purple-600 mb-3">Private Universities</h3>
+                  <p className="text-2xl font-bold text-gray-900 mb-2">{colleges.filter(c => c.ownership === 'Private').length}</p>
+                  <p className="text-sm text-gray-600">Top-ranked private institutions with excellent placements</p>
                 </div>
               </div>
             </div>
