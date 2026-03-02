@@ -1,0 +1,45 @@
+# robots.txt for Career Guidance Platform
+# Last updated: February 24, 2026
+
+# Allow all good bots to crawl everything
+User-agent: *
+Allow: /
+
+# Block specific paths that shouldn't be indexed
+Disallow: /api/
+Disallow: /.netlify/
+Disallow: /admin/
+Disallow: /private/
+
+# Special rules for AI crawlers
+# ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# Google Bard/Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://indiacareerguidance.netlify.app/sitemap.xml
+
+# Crawl delay to prevent server overload (polite crawling)
+Crawl-delay: 1

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import StructuredData from '../../components/StructuredData'
 import { 
   ArrowLeft, 
   TrendingUp, 
@@ -20,6 +21,38 @@ import {
 const ComputerScienceDetails = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Structured Data for this career page */}
+      <StructuredData 
+        type="breadcrumb" 
+        data={{
+          breadcrumbs: [
+            { name: 'Home', url: 'https://indiacareerguidance.netlify.app/' },
+            { name: 'Engineering', url: 'https://indiacareerguidance.netlify.app/engineering' },
+            { name: 'Computer Science Engineering', url: 'https://indiacareerguidance.netlify.app/career/computer-science-engineering' }
+          ]
+        }} 
+      />
+      <StructuredData 
+        type="career" 
+        data={{
+          title: 'Computer Science Engineering - Bachelor of Technology',
+          description: 'Design and develop software, applications, and computer systems that power our digital world. Learn programming, algorithms, data structures, and modern software development.',
+          category: 'Engineering',
+          educationLevel: 'Undergraduate',
+          duration: 'PT4Y',
+          skills: ['Programming', 'Data Structures', 'Algorithms', 'Software Development', 'Database Management', 'Web Development', 'Machine Learning']
+        }} 
+      />
+      <StructuredData 
+        type="article" 
+        data={{
+          title: 'Computer Science Engineering Career Guide',
+          description: 'Complete guide to pursuing Computer Science Engineering in India, including entrance exams, top colleges, career prospects, and salary expectations.',
+          datePublished: '2026-02-24',
+          dateModified: '2026-02-24'
+        }} 
+      />
+
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">

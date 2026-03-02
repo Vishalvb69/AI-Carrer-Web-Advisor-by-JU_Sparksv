@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
+import StructuredData from '../components/StructuredData'
 import { 
   BookOpen, 
   Users, 
@@ -119,6 +120,51 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Structured Data for SEO - helps Google and AI search understand our content */}
+      <StructuredData 
+        type="organization" 
+        data={{
+          name: 'Career Guidance Platform for Indian Students',
+          description: 'Comprehensive career counseling platform helping Indian students make informed career decisions with AI-powered guidance, entrance exam prep, and personalized counseling.',
+          url: 'https://indiacareerguidance.netlify.app',
+          email: 'support@example.com',
+          socialMedia: [
+            'https://twitter.com/your-handle',
+            'https://linkedin.com/company/your-company'
+          ]
+        }} 
+      />
+      <StructuredData 
+        type="website" 
+        data={{
+          name: 'Career Guidance for Indian Students',
+          url: 'https://indiacareerguidance.netlify.app'
+        }} 
+      />
+      <StructuredData 
+        type="faq" 
+        data={{
+          questions: [
+            {
+              question: 'What streams can I choose after Class 10 in India?',
+              answer: 'After Class 10, Indian students can choose from Science (PCM or PCB), Commerce, or Arts streams. Science with PCM leads to engineering, Science with PCB leads to medical careers, Commerce opens paths to CA, MBA, and business, while Arts offers careers in teaching, psychology, design, journalism, and more.'
+            },
+            {
+              question: 'What are the major entrance exams in India?',
+              answer: 'Major entrance exams include JEE (Joint Entrance Examination) for engineering, NEET for medical courses, CAT for MBA programs, CLAT for law, and various state-level exams for different courses.'
+            },
+            {
+              question: 'How can I prepare for JEE or NEET?',
+              answer: 'Preparation requires consistent study, solving previous years papers, taking mock tests, understanding concepts thoroughly, and joining coaching if needed. Our platform provides detailed preparation strategies and resources for both exams.'
+            },
+            {
+              question: 'What are emerging careers in India for 2026?',
+              answer: 'Emerging careers include Data Science, AI/ML Engineering, Content Creation, E-Sports, Digital Marketing, UX Design, Cyber Security, and other technology-driven fields with high growth potential.'
+            }
+          ]
+        }} 
+      />
+
       {/* Hero Section */}
       <Hero />
 

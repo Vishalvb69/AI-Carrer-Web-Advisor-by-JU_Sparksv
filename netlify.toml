@@ -26,14 +26,40 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    # Prevent clickjacking - stops attackers from embedding your site in an iframe
     X-Frame-Options = "DENY"
+    
+    # Prevent MIME type sniffing - stops browsers from guessing file types incorrectly
     X-Content-Type-Options = "nosniff"
+    
+    # Enable XSS protection in browsers
     X-XSS-Protection = "1; mode=block"
+    
+    # Control which sites can access your resources
     Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Force HTTPS - critical for user data security (Supabase requires HTTPS)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    
+    # Content Security Policy - CRITICAL for XSS protection
+    # Updated to allow Supabase, Google Fonts, and necessary resources
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.supabase.co https://*.netlify.app https://www.google-analytics.com; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
+    
+    # Permissions Policy - control browser features
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
 
 [[headers]]
   for = "/api/*"
   [headers.values]
+    # Allow your frontend to call APIs (update with your actual domain after deployment)
     Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Max-Age = "86400"
+    
+    # API-specific security
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    
+    # Rate limiting hint (actual rate limiting done in function code)
+    X-RateLimit-Limit = "100"

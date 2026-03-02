@@ -47,7 +47,6 @@ function detectStateQuery(message) {
     'mh': 'Maharashtra',
     'tn': 'Tamil Nadu',
     'ka': 'Karnataka',
-    'ka': 'Karnataka',
     'up': 'Uttar Pradesh',
     'tg': 'Telangana',
     'wb': 'West Bengal',
