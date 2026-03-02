@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ChatInterface from './components/ChatInterface'
+import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import ClassTenthBelow from './pages/ClassTenthBelow'
 import StreamSelection from './pages/StreamSelection'
@@ -71,6 +72,7 @@ import StandupComedyDetails from './pages/careers/StandupComedyDetails'
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header />
         <main className="flex-1">

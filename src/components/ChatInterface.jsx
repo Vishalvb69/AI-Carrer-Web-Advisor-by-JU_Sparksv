@@ -24,6 +24,7 @@ const ChatInterface = () => {
   const [inputMessage, setInputMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [rateLimitInfo, setRateLimitInfo] = useState(null)
+  const [remainingMessages, setRemainingMessages] = useState(null)
   const messagesEndRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -123,21 +124,40 @@ const ChatInterface = () => {
 
       if (!response.ok) {
         if (response.status === 429) {
-          // Rate limit exceeded
+          // Rate limit exceeded - show improved message with links
           setRateLimitInfo({
             resetIn: data.resetIn,
-            showUntil: Date.now() + (data.resetIn * 60 * 1000)
+            showUntil: Date.now() + (data.resetIn * 60 * 1000),
+            links: data.links || []
           })
-          throw new Error(`Rate limit exceeded. Please try again in ${data.resetIn} minutes.`)
+          
+          // Add rate limit message to chat
+          const rateLimitMessage = {
+            id: Date.now() + 1,
+            text: data.error,
+            sender: 'ai',
+            timestamp: new Date(),
+            isRateLimit: true,
+            links: data.links
+          }
+          setMessages(prev => [...prev, rateLimitMessage])
+          setRemainingMessages(0)
+          return;
         }
         throw new Error(data.error || 'Failed to get response')
+      }
+      
+      // Update remaining messages count
+      if (data.remaining !== undefined) {
+        setRemainingMessages(data.remaining)
       }
 
       const aiMessage = {
         id: Date.now() + 1,
         text: data.response,
         sender: 'ai',
-        timestamp: new Date()
+        timestamp: new Date(),
+        isSpamResponse: data.isSpamResponse || false
       }
 
       setMessages(prev => [...prev, aiMessage])
@@ -179,6 +199,7 @@ const ChatInterface = () => {
       timestamp: new Date()
     }])
     setRateLimitInfo(null)
+    setRemainingMessages(null)
   }
 
   if (!isOpen) {
@@ -222,10 +243,36 @@ const ChatInterface = () => {
       {/* Rate limit warning */}
       {rateLimitInfo && Date.now() < rateLimitInfo.showUntil && (
         <div className="bg-yellow-50 border-b border-yellow-200 p-3">
-          <div className="flex items-center space-x-2 text-yellow-800">
+          <div className="flex items-center space-x-2 text-yellow-800 mb-2">
             <Clock className="h-4 w-4" />
-            <span className="text-sm">
-              Rate limit reached. Try again in {Math.ceil((rateLimitInfo.showUntil - Date.now()) / 60000)} minutes.
+            <span className="text-sm font-medium">
+              Rate limit reached. Try again in {Math.ceil((rateLimitInfo.showUntil - Date.now()) / 60000)} minute{Math.ceil((rateLimitInfo.showUntil - Date.now()) / 60000) > 1 ? 's' : ''}.
+            </span>
+          </div>
+          {rateLimitInfo.links && rateLimitInfo.links.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-2">
+              {rateLimitInfo.links.map((link, index) => (
+                <Link 
+                  key={index}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className="text-xs bg-yellow-600 text-white px-3 py-1.5 rounded-lg hover:bg-yellow-700 transition-colors"
+                >
+                  {link.text}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+      
+      {/* Remaining messages warning (show when < 3 left) */}
+      {remainingMessages !== null && remainingMessages < 3 && remainingMessages > 0 && (
+        <div className="bg-orange-50 border-b border-orange-200 p-3">
+          <div className="flex items-center space-x-2 text-orange-800">
+            <Clock className="h-4 w-4" />
+            <span className="text-sm font-medium">
+              ⚠️ Only {remainingMessages} message{remainingMessages > 1 ? 's' : ''} remaining this hour
             </span>
           </div>
         </div>
@@ -252,12 +299,30 @@ const ChatInterface = () => {
                   ? 'bg-primary-600 text-white'
                   : message.isError
                   ? 'bg-red-50 text-red-800 border border-red-200'
+                  : message.isRateLimit
+                  ? 'bg-yellow-50 text-yellow-900 border border-yellow-300'
+                  : message.isSpamResponse
+                  ? 'bg-blue-50 text-blue-900 border border-blue-200'
                   : 'bg-gray-100 text-gray-800'
               }`}
             >
               <p className="text-xs sm:text-sm whitespace-pre-wrap break-words">
                 {message.sender === 'ai' ? formatMessageWithLinks(message.text) : message.text}
               </p>
+              {message.links && message.links.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {message.links.map((link, index) => (
+                    <Link 
+                      key={index}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className="text-xs bg-yellow-600 text-white px-3 py-1.5 rounded-lg hover:bg-yellow-700 transition-colors inline-block"
+                    >
+                      {link.text}
+                    </Link>
+                  ))}
+                </div>
+              )}
               <p className="text-xs opacity-70 mt-1">
                 {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
               </p>

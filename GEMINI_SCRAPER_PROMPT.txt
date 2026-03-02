@@ -1,0 +1,276 @@
+You are gathering educational information for an AI career counseling chatbot for Indian high school and college students. The chatbot needs to recognize and provide helpful responses for 74+ education-related abbreviations and terms. Provide concise, student-friendly information with official sources.
+
+---
+
+## PART 1: STATE ABBREVIATIONS (5 states)
+
+For each state abbreviation, provide:
+- Full name
+- Number of top engineering colleges (if known from NIRF data)
+- 2-3 notable colleges/universities
+
+**States to research:**
+1. MH (Maharashtra)
+2. TN (Tamil Nadu)
+3. KA (Karnataka)
+4. RJ (Rajasthan)
+5. UP (Uttar Pradesh)
+
+**Format your response as:**
+```
+STATE: MH
+Full Name: Maharashtra
+Top Engineering Colleges: 12 colleges
+Notable Institutions: VJTI Mumbai, COEP Pune, ICT Mumbai
+```
+
+---
+
+## PART 2: COUNSELING & ADMISSION BODIES (4 organizations)
+
+For each organization, provide:
+- Full name
+- Primary purpose (1-2 sentences)
+- Which exams/admissions they handle
+- Official website URL
+- Student-relevant info (counseling rounds, timeline, etc.)
+
+**Organizations to research:**
+1. JoSAA (Joint Seat Allocation Authority)
+2. CSAB (Central Seat Allocation Board)
+3. MCC (Medical Counseling Committee)
+4. DGME (Directorate General of Medical Education)
+
+**Format your response as:**
+```
+ORGANIZATION: JoSAA
+Full Name: Joint Seat Allocation Authority
+Purpose: Conducts centralized counseling for admissions to IITs, NITs, IIITs, and Government Funded Technical Institutes (GFTIs) based on JEE Main and JEE Advanced ranks
+Handles: JEE Main, JEE Advanced admissions
+Official Website: https://josaa.nic.in
+Student Info: 7 rounds of seat allocation; online registration and choice filling; seat acceptance deadlines
+Importance: HIGH (affects 100,000+ engineering students annually)
+```
+
+---
+
+## PART 3: MEDICAL REGULATORY BODIES (8 organizations)
+
+For each body, provide:
+- Full name
+- Primary function (1-2 sentences)
+- Relevance to students (admissions, licensing, accreditation?)
+- Official website URL
+- When students interact with them
+
+**Bodies to research:**
+1. NMC (National Medical Commission)
+2. DCI (Dental Council of India)
+3. DGHS (Directorate General of Health Services)
+4. MCI (Medical Council of India - now replaced by NMC)
+5. INI (Institute of National Importance)
+6. CCIM (Central Council of Indian Medicine)
+7. NCH (National Commission for Homeopathy)
+8. NCISM (National Commission for Indian System of Medicine)
+
+**Format your response as:**
+```
+BODY: NMC
+Full Name: National Medical Commission
+Function: Regulatory body for medical education in India; replaced MCI in 2020
+Student Relevance: Accredits medical colleges, oversees NEET exam, sets curriculum standards
+Official Website: https://www.nmc.org.in
+Student Interaction: College selection (check NMC-approved colleges), MBBS licensing (after graduation)
+Importance: HIGH (every medical student needs to know this)
+```
+
+---
+
+## PART 4: ENTRANCE EXAMS (5 exams)
+
+For each exam, provide:
+- Full name
+- What it tests (subjects)
+- Which colleges/programs accept it
+- Exam pattern (online/offline, duration)
+- Official website URL
+- Approximate number of candidates annually
+
+**Exams to research:**
+1. CTET (Central Teacher Eligibility Test)
+2. BITSAT (BITS Admission Test)
+3. CUET (Common University Entrance Test)
+4. AILET (All India Law Entrance Test)
+5. NCHMCT-JEE (National Council for Hotel Management Joint Entrance Exam)
+
+**Format your response as:**
+```
+EXAM: BITSAT
+Full Name: BITS Admission Test
+Tests: Physics, Chemistry, Mathematics/Biology, English, Logical Reasoning
+Accepted By: BITS Pilani (Pilani, Goa, Hyderabad campuses)
+Pattern: Online computer-based test, 3 hours duration, 150 questions
+Official Website: https://www.bitsadmission.com
+Annual Candidates: ~2-3 lakh students
+Student Tip: Can be taken in addition to JEE Main; multiple test dates available
+Importance: HIGH (premier engineering institute alternative to IITs/NITs)
+```
+
+---
+
+## PART 5: COURSE ABBREVIATIONS (10 courses)
+
+For each course, provide:
+- Full name
+- Degree type (undergraduate/postgraduate)
+- Field of study
+- Typical duration
+- Key difference from similar courses (if any)
+- Career outcomes
+
+**Courses to research:**
+1. B.E. (and how it differs from B.Tech)
+2. B.Ed (Bachelor of Education)
+3. B.Pharma (Bachelor of Pharmacy)
+4. BDS (Bachelor of Dental Surgery)
+5. BAMS (Bachelor of Ayurvedic Medicine and Surgery)
+6. BHMS (Bachelor of Homeopathic Medicine and Surgery)
+7. BUMS (Bachelor of Unani Medicine and Surgery)
+8. BSMS (Bachelor of Siddha Medicine and Surgery)
+9. B.Sc (N) - [Nursing]
+10. AI/ML (as a specialization/field)
+
+**Format your response as:**
+```
+COURSE: B.E.
+Full Name: Bachelor of Engineering
+Type: Undergraduate degree (UG)
+Field: Engineering
+Duration: 4 years (8 semesters)
+Key Difference: B.E. is more theory/science-focused vs B.Tech which is more application/technology-focused; both are equivalent for employment and higher studies
+Career: Software Engineer, Mechanical Engineer, Civil Engineer, etc. (same as B.Tech)
+Entrance Exams: JEE Main, state-level exams
+Importance: HIGH (students often confused between B.E. and B.Tech)
+```
+
+---
+
+## PART 6: PRIORITY RANKING
+
+Based on search volume, student queries, and importance in Indian education system, rank these terms from 1-10 (highest priority):
+
+**All 74 terms:**
+JEE, NEET, CAT, GATE, CMAT, XAT, SNAP, IIT-JEE, AIEEE, CTET, IIT, NIT, BITS, AIIMS, IGNOU, AKTU, B.Tech, MBBS, B.E., BBA, MBA, B.Ed, B.Sc., B.Com, B.A., M.Sc., PhD, B.Pharma, BHMS, PCM, PCB, MH, TN, KA, RJ, UP, CS, AI/ML, IT, Data Science, JoSAA, CSAB, MCC, DGME, BITSAT, CLAT, AILET, NCHMCT-JEE, CUET, CLAT PG, AACCC, BAMS, BDS, BHMS, B.Sc (N), BSMS, BUMS, CCIM, DCI, DGHS, INI, JIPMER, MCI, MoH&FW, MoA, NCISM, NCH, NMC, CBSE, BCA, MCA
+
+**Format your response as:**
+```
+PRIORITY LEVEL 10 (Most searched/important):
+- NEET
+- JEE
+- IIT
+- MBBS
+- B.Tech
+
+PRIORITY LEVEL 9:
+- CAT
+- GATE
+- NIT
+...
+
+PRIORITY LEVEL 1 (Least searched):
+- AACCC
+- MoA
+...
+```
+
+**Prioritization criteria:**
+- Search volume on Indian education sites
+- Number of students affected annually
+- Frequency in career counseling conversations
+- Critical decision points (college selection, exam prep, stream choice)
+
+---
+
+## PART 7: ADDITIONAL CONTEXT
+
+For the TOP 15 highest priority terms, provide:
+- Common student questions (3-5 examples)
+- Key resources (prep materials, official handbooks)
+- Important deadlines/timelines (if applicable)
+- Common misconceptions to clarify
+
+**Format your response as:**
+```
+TERM: NEET
+Common Questions:
+1. "What is the NEET exam pattern?"
+2. "How many attempts are allowed for NEET?"
+3. "Which medical colleges accept NEET scores?"
+4. "What is a good NEET score for AIIMS?"
+5. "Can I take NEET after 12th commerce?"
+
+Key Resources:
+- NTA NEET official website: https://neet.nta.nic.in
+- NCERT books (Physics, Chemistry, Biology)
+- Previous year question papers
+
+Timeline:
+- Registration: February-March
+- Exam: May (usually first Sunday)
+- Results: June
+- Counseling: July-September (MCC rounds)
+
+Misconceptions:
+- "NEET is only for MBBS" → FALSE (also for BDS, AYUSH courses)
+- "NEET has age limit" → PARTIALLY TRUE (removed in 2023, check latest rules)
+```
+
+---
+
+## PART 8: OFFICIAL WEBSITE LINKS
+
+Compile a master list of ALL official websites mentioned above, organized by category.
+
+**Format:**
+```
+EXAM WEBSITES:
+- JEE Main: https://jeemain.nta.nic.in
+- NEET: https://neet.nta.nic.in
+- BITSAT: https://www.bitsadmission.com
+...
+
+COUNSELING/ADMISSION BODIES:
+- JoSAA: https://josaa.nic.in
+- MCC: https://mcc.nic.in
+...
+
+REGULATORY BODIES:
+- NMC: https://www.nmc.org.in
+- DCI: https://www.dciindia.gov.in
+...
+```
+
+---
+
+## IMPORTANT GUIDELINES:
+
+1. **Accuracy:** All information must be current as of 2024-2026
+2. **Sources:** Prioritize official government/institutional websites
+3. **Student-focused:** Write for 16-22 year old Indian students
+4. **Brevity:** Each description should be 2-3 sentences max (except Part 7)
+5. **Verification:** If unsure, mark with [VERIFY] and provide best available info
+6. **Links:** All websites must be official .gov.in, .ac.in, or verified institutional domains
+
+---
+
+## OUTPUT FORMAT:
+
+Please structure your response with clear section headers (PART 1, PART 2, etc.) so I can easily extract information for each category. Use the exact formats shown above.
+
+If any information is not available or has changed recently, note it as [NOT FOUND] or [UPDATED IN 20XX] so I can flag it for manual review.
+
+---
+
+**Additional helpful info:** If you find any other critical education terms, counseling bodies, or exams that Indian students commonly search for but are missing from the list above, please include them in a BONUS section at the end.
+
+Thank you! This information will help thousands of Indian students get instant, accurate career guidance.
