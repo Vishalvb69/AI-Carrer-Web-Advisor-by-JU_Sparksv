@@ -1,0 +1,544 @@
+# MEDICAL COUNSELING DATA SCRAPER PROMPT FOR GEMINI AI
+
+**TASK:** Gather comprehensive, official, and up-to-date medical counseling information for ALL Indian states and union territories (28 states + 8 UTs = 36 total).
+
+---
+
+## CRITICAL INSTRUCTIONS:
+
+1. **Source Accuracy:** ONLY use official MCC website, NMC, DCI, state medical counseling websites, and verified health department portals. DO NOT include unverified information.
+
+2. **Include Official Links:** Every piece of data must include the source official website URL.
+
+3. **Current Data:** Information should be relevant for NEET 2025-2026 academic year. If dates vary yearly, mention "Typically in [month]" or "Usually [timeline]".
+
+4. **Completeness:** Cover NATIONAL-level (MCC - 15% AIQ) AND STATE-level (85% state quota) counseling for each state.
+
+5. **Student-Friendly:** Use simple language. Medical counseling is complex - make it understandable.
+
+6. **Course Coverage:** Include MBBS, BDS, AYUSH (BAMS, BHMS, BUMS, BSMS, BNYS), B.Sc Nursing, B.V.Sc (if applicable), and other NEET-based courses.
+
+---
+
+## PART 1: NATIONAL-LEVEL MEDICAL COUNSELING (Detailed)
+
+### 1.1 MCC (Medical Counselling Committee)
+
+Provide comprehensive details:
+
+**Basic Information:**
+- Full form: Medical Counselling Committee
+- What MCC is and its role
+- Which entrance exam it uses (NEET-UG)
+- What MCC controls: 15% All India Quota (AIQ) seats
+- Institutions covered (AIIMS, Central Universities, JIPMER, etc.)
+- Official website URL: https://mcc.nic.in/
+- Helpline number & email
+- Under which ministry (DGHS, Ministry of Health)
+
+**What is All India Quota (AIQ):**
+- 15% of total government medical college seats reserved for AIQ
+- Students from ANY state can apply
+- Domicile not required for AIQ
+- Open to all NEET qualified candidates
+- How cutoff ranks differ (usually lower than state quota)
+
+**Eligibility Criteria:**
+- NEET qualifying percentile (50%ile for General, 40%ile for General-PwD, 40%ile for SC/ST/OBC)
+- Age limit (if any - currently no age limit as per Supreme Court)
+- 12th board requirements (Physics, Chemistry, Biology)
+- Number of attempts (unlimited currently)
+
+**Courses Covered Under MCC:**
+For AIQ, specify:
+- MBBS seats (number across India)
+- BDS seats (number across India)
+- AYUSH courses seats
+
+**Counseling Process - Step by Step:**
+- Step 1: NEET exam (when, registration, NTA website)
+- Step 2: NEET result (when declared, scorecard download)
+- Step 3: MCC registration (when, fees, documents upload)
+- Step 4: Choice filling (number of choices, how to fill)
+- Step 5: Choice locking (deadline critical)
+- Step 6: Seat allotment (when results)
+- Step 7: Seat acceptance & fee payment (deadline, fees amount)
+- Step 8: Physical reporting to college (documents, timeline)
+- Step 9: Willingness for upgradation (rounds 2, 3, 4)
+
+**Number of Rounds:**
+- Round 1 (timeline)
+- Round 2 (timeline)
+- Round 3 (timeline)
+- Mop-up round (timeline)
+- Stray vacancy round (if applicable)
+
+**Documents Required:**
+- NEET scorecard / admit card
+- 10th mark sheet & certificate
+- 12th mark sheet & passing certificate
+- Date of Birth proof
+- Category certificate (SC/ST/OBC/EWS)
+- PwD certificate (if applicable)
+- Aadhaar card
+- Passport-size photos
+- Identity proof
+- Any other specified documents
+
+**Fees Structure:**
+- MCC registration fee (category-wise)
+- Seat acceptance security deposit (refundable/non-refundable)
+- College tuition fees (government MBBS ~50,000-5,00,000/year state-wise)
+- BDS fees
+- AYUSH fees
+
+**Seat Matrix:**
+- Total AIQ seats (MBBS + BDS + AYUSH)
+- Category-wise reservation
+- State-wise distribution of AIQ seats
+- Where to find seat matrix PDF
+
+**Important Dates (Typical NEET Year):**
+- NEET exam (typically May)
+- NEET result (typically June)
+- MCC Round 1 (typically July)
+- MCC Round 2 (typically August)
+- MCC Round 3 (typically September)
+- Classes start (typically October/November)
+
+**Common Mistakes Students Make:**
+- Applying to wrong category
+- Missing document upload deadlines
+- Not paying fees on time (seat forfeited)
+- Not reporting to college physically
+- Confusion between AIQ and state quota
+- Not participating in further rounds when possible
+- Wrong bank details for refund
+
+**Tips for Students:**
+- Fill maximum choices (300+ if possible)
+- Arrange college preferences by: preferred branch → location → college
+- Understand difference between government vs private medical colleges
+- Keep documents ready in advance
+- Monitor email & SMS daily during counseling
+- Understand exit vs retain vs upgrade options
+
+**Bond/Service Requirements:**
+- Some states have bond for MBBS (varies by state)
+- Bond amount ranges (₹10 lakhs to ₹1 crore)
+- Service period (1-3 years in rural areas)
+- Which states have bonds (mention clearly)
+
+**Official Resources:**
+- MCC official website: https://mcc.nic.in/
+- Information bulletin PDF
+- Seat matrix
+- Previous year cutoffs
+- College list with codes
+- NEET official website (NTA): https://neet.nta.nic.in/
+
+---
+
+### 1.2 DGHS (Directorate General of Health Services)
+
+- Role in overseeing MCC
+- Official website
+- How DGHS relates to students
+
+---
+
+### 1.3 NMC (National Medical Commission)
+
+- What NMC is (replaced MCI in 2020)
+- Role in approving medical colleges
+- Official website: https://nmc.org.in/
+- List of approved colleges (where to check)
+
+---
+
+### 1.4 DCI (Dental Council of India)
+
+- Role for BDS admissions
+- Official website
+- List of approved dental colleges
+
+---
+
+## PART 2: STATE-WISE MEDICAL COUNSELING (All 36 States/UTs)
+
+For **EACH** state/UT, provide:
+
+### STATE: [State Name]
+
+**2.1 State Medical Counseling Body:**
+- Official name (e.g., "Directorate of Medical Education", "State Medical Board")
+- Acronym (e.g., DME, DGME, DMER)
+- Official website URL
+- Helpline number
+- Official email
+- Office address (if important)
+
+**2.2 State Quota:**
+- 85% state quota explained
+- Who is eligible (domicile requirements)
+- How to get domicile certificate
+- How domicile is verified
+
+**2.3 Types of Medical Colleges in State:**
+- Government Medical Colleges (number + names of ALL)
+- Deemed Medical Universities (if any)
+- Private Medical Colleges (number + names of top ones)
+- AIIMS in state (if any) - mention AIQ vs institute quota
+- JIPMER in state (if any)
+- Total MBBS seats in state (government + private)
+- Total BDS seats in state
+- Total AYUSH seats (BAMS/BHMS/BUMS/BSMS)
+- B.Sc Nursing seats
+
+**2.4 Counseling Rounds:**
+- Total number of rounds (typically 2-3)
+- Mop-up/special rounds
+- Timeline for each round:
+  - Round 1: [Month + dates]
+  - Round 2: [Month + dates]
+  - Round 3 / Mop-up: [if applicable]
+
+**2.5 Step-by-Step State Counseling Process:**
+- Step 1: Register on state counseling portal (website, when, fees)
+- Step 2: Upload documents (online/offline, what documents)
+- Step 3: Document verification (online/physical, where, when)
+- Step 4: Choice filling (how many choices, when)
+- Step 5: Choice locking (deadline)
+- Step 6: Seat allotment result (when, how to check)
+- Step 7: Seat acceptance & fee payment (online/offline, deadline, amount)
+- Step 8: Physical reporting to college (documents needed, timeline)
+- Step 9: Upgradation option (subsequent rounds)
+
+**2.6 Registration Fees:**
+- General category fee
+- OBC category fee (if different)
+- SC/ST category fee (if different)
+- EWS category fee
+- Refundable vs non-refundable amount
+
+**2.7 Required Documents:**
+Complete checklist:
+- NEET scorecard
+- NEET admit card
+- 10th mark sheet & certificate
+- 12th mark sheet & certificate
+- Bonafide / Domicile certificate (issuing authority, format)
+- School leaving certificate / Transfer certificate
+- Caste certificate (for SC/ST/OBC)
+- EWS certificate (if applicable)
+- PwD certificate (if applicable)
+- Income certificate (for EWS/fee concession)
+- Aadhaar card
+- Passport-size photos
+- Migration certificate (if from other board)
+- [State-specific documents]
+
+**2.8 Fee Structure (Annual Tuition):**
+- Government MBBS college fees (exact or range)
+- Private MBBS college fees (range - often ₹5L to ₹25L/year)
+- Government BDS college fees
+- Private BDS college fees
+- AYUSH government college fees
+- AYUSH private college fees
+- Hostel fees availability
+- Other charges (development, security deposit)
+
+**2.9 Management Quota in Private Colleges:**
+- Does state allow management quota?
+- What percentage of seats?
+- How fees differ (management vs merit)
+- How to apply for management seats
+- Is it legal and regulated?
+
+**2.10 Bond/Service Requirements:**
+- Does this state have mandatory bond for MBBS students?
+- Bond amount (exact figure)
+- Service period (years)
+- Where service must be done (rural PHC, government hospital)
+- Consequences of breaking bond
+- Is bond for government colleges only or private too?
+- Any exemptions from bond?
+
+**2.11 Reservation Policy:**
+- SC reservation %
+- ST reservation %
+- OBC reservation %
+- EWS reservation %
+- PwD reservation %
+- Any state-specific quotas (sports, defence widow, freedom fighter, etc.)
+- Internal reservation within domicile (rural/urban if applicable)
+
+**2.12 Seat Matrix:**
+- Where to download official seat matrix
+- Government MBBS seats (exact number)
+- Private MBBS seats (exact number)
+- Government BDS seats
+- Private BDS seats
+- AYUSH seats breakdown
+
+**2.13 Cutoff Ranks (Previous Year):**
+- Where to find official cutoff data
+- Approximate last rank for government MBBS (General category)
+- Approximate last rank for government MBBS (OBC)
+- Approximate last rank for government MBBS (SC/ST)
+- Approximate last rank for private MBBS
+- Note: Changes every year based on difficulty
+
+**2.14 Important Dates (Typical Year):**
+- When state counseling notification releases (month)
+- Registration start (typical date)
+- Registration end (typical date)
+- Document verification dates
+- Round 1 allotment (month)
+- Round 2 allotment (month)
+- Round 3 / Mop-up (month)
+- Classes start (month - typically Aug/Sep/Oct)
+
+**2.15 College Codes & Choice Filling:**
+- How to find college codes
+- Where official college list is published
+- How many choices students can fill
+- Strategy for filling choices (government first, then private)
+
+**2.16 Common Mistakes Specific to This State:**
+- Domicile certificate issues (most common mistake)
+- Wrong document format (caste certificate authority)
+- Missing deadlines (strict timelines)
+- Not understanding bond implications
+- Choosing colleges without research
+- Fee payment failures
+- Not reporting physically after seat allotment
+
+**2.17 Student Tips & Guidance:**
+- Research colleges thoroughly (faculty, infrastructure, patient flow)
+- Understand location and hostel availability
+- Check MCI/NMC recognition status
+- Government vs private college decision factors
+- Don't just chase city colleges - rural government colleges also good
+- Understand bond before accepting seat
+- Keep backups ready (AYUSH, BDS if MBBS not possible)
+- Financial planning (loans, scholarships available?)
+
+**2.18 "While You Wait" - What to Do During Counseling Period:**
+- Keep all documents ready (originals + 5 photocopies)
+- Get domicile certificate in advance (takes time)
+- Get caste certificate verified and attested
+- Arrange finances / explore education loans
+- Research colleges and their rankings
+- Track state counseling website DAILY
+- Join state counseling WhatsApp/Telegram groups (official if any)
+- Prepare mentally for any outcome (MBBS/BDS/AYUSH)
+- Don't panic - multiple rounds happen
+- Talk to seniors who went through this process
+
+**2.19 AYUSH Counseling:**
+- Is AYUSH counseling separate or same as MBBS/BDS?
+- AYUSH colleges in state (government + private)
+- AYUSH courses available (BAMS/BHMS/BUMS/BSMS/BNYS)
+- Career prospects after AYUSH
+- AYUSH fees structure
+
+**2.20 Backup Options:**
+- If not getting MBBS in Round 1, wait for Round 2/3
+- Consider BDS (scope, career)
+- Consider AYUSH (good career in government sector)
+- Consider B.Sc Nursing (NEET-based in some states)
+- Consider other states with lower cutoffs
+- Private MBBS (if financially feasible)
+- One year drop and re-attempt NEET (pros/cons)
+
+**2.21 Motivational Message:**
+- Medical counseling is just the beginning, not the end
+- Multiple rounds mean multiple opportunities
+- Every seat is valuable - MBBS, BDS, AYUSH all have scope
+- Government colleges exist even at lower ranks - don't lose hope
+- Private colleges also produce great doctors
+- Your NEET score doesn't define your future as a doctor - your dedication does
+- Many students get upgrades in Round 2/3 - stay patient
+- Bond is manageable - serving rural areas is noble
+- Medicine is a marathon, not a sprint
+
+**2.22 Financial Aid & Scholarships:**
+- State government scholarships (SC/ST/OBC/Minority)
+- Central government scholarships
+- Education loan options (banks offering medical education loans)
+- Fee reimbursement schemes (if any in state)
+- How to apply for financial aid
+
+**2.23 Official Resources & Links:**
+- State counseling official website
+- Information brochure PDF
+- Seat matrix PDF
+- College list with codes
+- Previous year cutoff ranks (if published)
+- Helpline number
+- Official email
+- Official social media (if any)
+- FAQ document (if available)
+
+---
+
+## STATES/UTs TO COVER (All 36):
+
+**States (28):**
+1. Andhra Pradesh
+2. Arunachal Pradesh
+3. Assam
+4. Bihar
+5. Chhattisgarh
+6. Goa
+7. Gujarat
+8. Haryana
+9. Himachal Pradesh
+10. Jharkhand
+11. Karnataka
+12. Kerala
+13. Madhya Pradesh
+14. Maharashtra
+15. Manipur
+16. Meghalaya
+17. Mizoram
+18. Nagaland
+19. Odisha
+20. Punjab
+21. Rajasthan
+22. Sikkim
+23. Tamil Nadu
+24. Telangana
+25. Tripura
+26. Uttar Pradesh
+27. Uttarakhand
+28. West Bengal
+
+**Union Territories (8):**
+29. Andaman and Nicobar Islands
+30. Chandigarh
+31. Dadra and Nagar Haveli and Daman and Diu
+32. Delhi (NCT)
+33. Jammu and Kashmir
+34. Ladakh
+35. Lakshadweep
+36. Puducherry
+
+---
+
+## OUTPUT FORMAT:
+
+Please structure your response as **JSON format** for easy integration into our website code:
+
+```json
+{
+  "nationalCounseling": {
+    "mcc": {
+      "basicInfo": { /* all MCC details */ },
+      "eligibility": { /* criteria */ },
+      "process": [ /* step-by-step array */ ],
+      "rounds": [ /* array */ ],
+      "documents": [ /* array */ ],
+      "fees": { /* details */ },
+      "seatMatrix": { /* details */ },
+      "importantDates": { /* details */ },
+      "commonMistakes": [ /* array */ ],
+      "studentTips": [ /* array */ ],
+      "officialLinks": { /* URLs */ }
+    },
+    "dghs": { /* details */ },
+    "nmc": { /* details */ },
+    "dci": { /* details */ }
+  },
+  "stateCounseling": [
+    {
+      "stateName": "Maharashtra",
+      "stateCode": "MH",
+      "counselingBody": { /* details */ },
+      "stateQuota": { /* 85% details */ },
+      "colleges": {
+        "government": [ /* array of college objects */ ],
+        "private": [ /* array */ ],
+        "deemed": [ /* array */ ],
+        "totalSeats": { /* breakdown */ }
+      },
+      "rounds": [ /* array of rounds */ ],
+      "process": [ /* step-by-step array */ ],
+      "documents": [ /* array */ ],
+      "fees": {
+        "registration": { /* category-wise */ },
+        "tuition": { /* course-wise and govt/private */ }
+      },
+      "bond": {
+        "hasBond": true/false,
+        "amount": "number",
+        "servicePeriod": "string",
+        "details": "string"
+      },
+      "reservation": { /* all quotas */ },
+      "seatMatrix": { /* details */ },
+      "cutoffs": { /* previous year */ },
+      "importantDates": { /* timeline */ },
+      "commonMistakes": [ /* array */ ],
+      "studentTips": [ /* array */ ],
+      "whileYouWait": [ /* array */ ],
+      "ayush": { /* details */ },
+      "backupOptions": [ /* array */ ],
+      "motivation": "string",
+      "financialAid": { /* scholarships, loans */ },
+      "officialLinks": { /* all URLs */ }
+    },
+    // ... repeat for all 36 states/UTs
+  ]
+}
+```
+
+---
+
+## QUALITY CHECKLIST:
+
+Before providing data, ensure:
+- ✅ All official websites verified and working
+- ✅ All 36 states/UTs covered
+- ✅ Data is from NEET 2025-2026 or clearly marked as "typical"
+- ✅ Phone numbers in correct format
+- ✅ Email addresses verified
+- ✅ Bond information clearly mentioned (critical for students)
+- ✅ Domicile requirements clear
+- ✅ Student language used (empathetic, encouraging)
+- ✅ Step-by-step processes crystal clear
+- ✅ Every claim has a source
+- ✅ JSON format is valid and parseable
+- ✅ No placeholder data - if unknown, mention "Check official website"
+- ✅ Financial information realistic and helpful
+- ✅ Motivational messages included (crucial for medical students)
+
+---
+
+## SPECIAL FOCUS AREAS:
+
+1. **Bond Requirements:** This is CRITICAL. Many students don't know about bonds until too late. Make this information prominent.
+
+2. **Domicile Rules:** Biggest confusion point. Explain clearly how to get domicile.
+
+3. **Government vs Private Fees:** Huge financial implication. Be clear about fee differences.
+
+4. **Multiple Courses:** MBBS is NOT the only option. Normalize BDS, AYUSH as good careers.
+
+5. **Mental Health:** Medical counseling is stressful. Include encouragement, hope, and realistic expectations.
+
+---
+
+## PRIORITY INFORMATION:
+
+If data gathering is overwhelming, prioritize states in this order:
+1. Top 10 medical education states: Uttar Pradesh, Maharashtra, Karnataka, Tamil Nadu, Andhra Pradesh, Telangana, Rajasthan, West Bengal, Gujarat, Delhi
+2. Next 10: Madhya Pradesh, Kerala, Punjab, Haryana, Bihar, Odisha, Chhattisgarh, Assam, Jharkhand, Uttarakhand
+3. Remaining states and UTs
+
+But ideally, cover ALL for completeness.
+
+---
+
+**BEGIN DATA SCRAPING NOW. PROVIDE COMPREHENSIVE JSON OUTPUT.**

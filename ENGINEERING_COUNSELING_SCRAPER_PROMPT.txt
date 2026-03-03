@@ -1,0 +1,377 @@
+# ENGINEERING COUNSELING DATA SCRAPER PROMPT FOR GEMINI AI
+
+**TASK:** Gather comprehensive, official, and up-to-date engineering counseling information for ALL Indian states and union territories (28 states + 8 UTs = 36 total).
+
+---
+
+## CRITICAL INSTRUCTIONS:
+
+1. **Source Accuracy:** ONLY use official government counseling websites, NTA, AICTE, and verified educational portals. DO NOT include unverified information.
+
+2. **Include Official Links:** Every piece of data must include the source official website URL.
+
+3. **Current Data:** Information should be relevant for 2025-2026 academic year. If dates vary yearly, mention "Typically in [month]" or "Usually [timeline]".
+
+4. **Completeness:** Cover BOTH national-level (JoSAA, CSAB) AND state-level counseling for each state.
+
+5. **Student-Friendly:** Use simple language that a 12th-pass student can understand. Avoid bureaucratic jargon where possible.
+
+---
+
+## PART 1: NATIONAL-LEVEL ENGINEERING COUNSELING (Detailed)
+
+### 1.1 JoSAA (Joint Seat Allocation Authority)
+
+Provide comprehensive details:
+
+**Basic Information:**
+- Full form and what JoSAA is
+- Which entrance exam(s) it accepts (JEE Main, JEE Advanced)
+- Types of institutions covered (IITs, NITs, IIITs, GFTIs)
+- Total participating institutes (exact number)
+- Official website URL
+- Helpline number & email
+
+**Eligibility Criteria:**
+- JEE Main rank requirements for NITs/IIITs/GFTIs
+- JEE Advanced rank requirements for IITs
+- 12th board percentage requirements
+- Age limit (if any)
+- Number of attempts allowed
+
+**Counseling Process - Step by Step:**
+- Step 1: Registration (what to do, when, fees)
+- Step 2: Choice filling (how many choices, how to prioritize)
+- Step 3: Choice locking (deadline importance)
+- Step 4: Seat allotment (when results come)
+- Step 5: Seat acceptance & fee payment (deadline, fees)
+- Step 6: Reporting to institute (documents needed)
+- Step 7: Willingness for upgradation (what this means)
+
+**Number of Rounds:**
+- Total rounds (usually 6)
+- CSAB special rounds
+- Dates for each round (if fixed, or typical months)
+
+**Documents Required:**
+- Complete checklist with exact document names
+- Online vs physical verification
+- Original vs photocopies
+- Certification requirements (e.g., self-attested)
+
+**Fees Structure:**
+- Registration fee for different categories (General/EWS/OBC/SC/ST)
+- Seat acceptance fee
+- Refund policy if leaving seat
+
+**Seat Matrix:**
+- Total seats across all institutes
+- Category-wise reservation (General/OBC/SC/ST/EWS/PwD)
+- Gender-neutral vs female-only seats
+
+**Important Dates:**
+- When registration typically opens (month)
+- When counseling rounds happen (month-wise)
+- When classes typically start
+
+**Common Mistakes Students Make:**
+- Not filling enough choices
+- Missing deadlines
+- Not understanding float/slide/freeze
+- Wrong document submission
+- Not upgrading when possible
+
+**Tips for Students:**
+- How to fill choice list strategically
+- Float vs Slide vs Freeze - when to use what
+- How to check college rankings/NIRF
+- What to do between rounds
+
+**Official Resources:**
+- JoSAA official website
+- Information bulletin PDF link
+- Mock allocation tool
+- Previous year rank vs college data (where to find)
+
+---
+
+### 1.2 CSAB (Central Seat Allocation Board)
+
+Provide:
+- What CSAB is (leftover seats after JoSAA)
+- When CSAB counseling happens (after JoSAA rounds)
+- Which seats are available (unfilled NIT/IIIT/GFTI seats)
+- Registration process
+- Official website
+- Typical timeline
+
+---
+
+## PART 2: STATE-WISE ENGINEERING COUNSELING (All 36 States/UTs)
+
+For **EACH** state/UT, provide:
+
+### STATE: [State Name]
+
+**2.1 State Counseling Body:**
+- Official name (e.g., "Maharashtra State CET Cell", "Rajasthan Engineering Admission Process")
+- Acronym (e.g., CET Cell, REAP, TNEA, KEA)
+- Official website URL
+- Helpline number
+- Official email
+- Office address (if important)
+
+**2.2 State Engineering Entrance Exam:**
+- If state has its own exam (e.g., MHT-CET for Maharashtra, TNEA for Tamil Nadu)
+  - Exam name
+  - Exam conducting body
+  - Exam pattern (MCQ/descriptive, subjects, duration)
+  - Exam date (typical month)
+  - Registration timeline
+  - Exam fee
+  - Official website
+- If state accepts JEE Main scores (mention this)
+- If both state exam AND JEE Main accepted (mention weightage)
+
+**2.3 Quota Breakdown:**
+- State Quota percentage (typically 85%)
+- All India Quota percentage (typically 15% - goes through JoSAA)
+- Home state vs other state seat availability
+- Domicile requirements for state quota
+
+**2.4 Types of Colleges Under State Counseling:**
+- Government Engineering Colleges (number + top 5 names)
+- Government-Aided Colleges (if applicable)
+- Private/Self-financed Colleges (number + top 5 names)
+- Deemed Universities (if applicable)
+- Total engineering seats in state (approximate)
+
+**2.5 Counseling Rounds:**
+- Total number of rounds (typically 3-4)
+- Special/mop-up rounds
+- Timeline for each round (months):
+  - Round 1: [Month + typical dates]
+  - Round 2: [Month + typical dates]
+  - Round 3: [Month + typical dates]
+  - Spot round/Mop-up: [if applicable]
+
+**2.6 Step-by-Step Counseling Process:**
+- Step 1: Online registration (website, fees, timeline)
+- Step 2: Document verification (online/offline, where, when)
+- Step 3: Choice filling (number of choices allowed, when)
+- Step 4: Choice locking (deadline)
+- Step 5: Seat allotment (result date)
+- Step 6: Seat acceptance (online confirmation, fees)
+- Step 7: Physical reporting (documents, where to go)
+- Step 8: Upgradation option (if available in further rounds)
+
+**2.7 Registration Fees:**
+- General category fee
+- Reserved category fee (OBC/SC/ST if different)
+- EWS category fee
+- Refundable vs non-refundable components
+
+**2.8 Required Documents:**
+Complete checklist:
+- Rank card / Scorecard
+- 10th mark sheet & certificate
+- 12th mark sheet & passing certificate
+- Domicile certificate / Bonafide certificate
+- Caste certificate (format, issuing authority)
+- EWS certificate (if applicable)
+- PwD certificate (if applicable)
+- Aadhaar card
+- Passport size photos
+- [Any state-specific documents]
+
+**2.9 Fee Structure (Annual):**
+- Government engineering college fees (range)
+- Private engineering college fees (range)
+- Hostel fees (if available)
+- Other charges (development fee, exam fee)
+
+**2.10 Reservation Policy:**
+- SC reservation %
+- ST reservation %
+- OBC reservation %
+- EWS reservation %
+- PwD reservation %
+- Sports/Defence quota %
+- Any state-specific quotas (tribal areas, hill station, etc.)
+
+**2.11 Special Categories/Rules:**
+- Internal reservation within domicile (rural/urban, gender)
+- Supernumerary seats
+- NRI quota (if applicable)
+- Management quota rules
+- Any state-specific special provisions
+
+**2.12 Institute/College Codes:**
+- How to find college codes for choice filling
+- Where official college list is published
+- Branch codes format
+
+**2.13 Important Dates (Typical Year):**
+- When notification releases (month)
+- Registration start date (typical)
+- Last date for application (typical)
+- Document verification dates (typical)
+- Round 1 allotment (typical)
+- Round 2 allotment (typical)
+- Round 3 allotment (typical)
+- Classes start (typical month)
+
+**2.14 Common Mistakes Specific to This State:**
+- State-specific common errors students make
+- Document verification issues
+- Domicile certificate problems
+- Wrong college code selection
+- Missing state-specific requirements
+
+**2.15 Student Tips & Guidance:**
+- How to research colleges in this state
+- Government vs private college decision factors
+- How to predict cutoffs (previous year data links)
+- What to do if not getting desired college
+- Upgradation strategy specific to this state
+
+**2.16 "While You Wait" - What to Do During Counseling:**
+- Prepare documents in advance
+- Keep multiple photocopies ready
+- Track official website daily
+- Learn basic coding/technical skills
+- Research college locations and hostel availability
+- Connect with seniors (if possible)
+- Prepare financially (fee arrangements)
+- Don't panic - multiple rounds available
+
+**2.17 Motivational Message:**
+- Counseling is a process, not one-time event
+- Multiple rounds mean multiple chances
+- Even if Round 1 doesn't work, upgrades happen
+- Focus on branch > college (for most careers)
+- Government colleges at good fees exist in every state
+- Private colleges also have good placements in many cases
+- Your efforts in JEE/State exam were not in vain
+
+**2.18 Official Resources & Links:**
+- Official counseling website
+- Information brochure PDF
+- College list with codes
+- Previous year cutoffs (official source)
+- Seat matrix PDF
+- YouTube/video tutorials (if official)
+- Official social media (if any)
+- RTI contact (if useful)
+
+---
+
+## STATES/UTs TO COVER (All 36):
+
+**States (28):**
+1. Andhra Pradesh
+2. Arunachal Pradesh
+3. Assam
+4. Bihar
+5. Chhattisgarh
+6. Goa
+7. Gujarat
+8. Haryana
+9. Himachal Pradesh
+10. Jharkhand
+11. Karnataka
+12. Kerala
+13. Madhya Pradesh
+14. Maharashtra
+15. Manipur
+16. Meghalaya
+17. Mizoram
+18. Nagaland
+19. Odisha
+20. Punjab
+21. Rajasthan
+22. Sikkim
+23. Tamil Nadu
+24. Telangana
+25. Tripura
+26. Uttar Pradesh
+27. Uttarakhand
+28. West Bengal
+
+**Union Territories (8):**
+29. Andaman and Nicobar Islands
+30. Chandigarh
+31. Dadra and Nagar Haveli and Daman and Diu
+32. Delhi (NCT)
+33. Jammu and Kashmir
+34. Ladakh
+35. Lakshadweep
+36. Puducherry
+
+---
+
+## OUTPUT FORMAT:
+
+Please structure your response as **JSON format** for easy integration into our website code:
+
+```json
+{
+  "nationalCounseling": {
+    "josaa": { /* all JoSAA data */ },
+    "csab": { /* all CSAB data */ }
+  },
+  "stateCounseling": [
+    {
+      "stateName": "Maharashtra",
+      "stateCode": "MH",
+      "counselingBody": { /* details */ },
+      "stateExam": { /* details */ },
+      "quotaBreakdown": { /* details */ },
+      "colleges": { /* details */ },
+      "rounds": [ /* array of rounds */ ],
+      "process": [ /* step-by-step array */ ],
+      "documents": [ /* array */ ],
+      "fees": { /* details */ },
+      "reservation": { /* details */ },
+      "importantDates": { /* details */ },
+      "commonMistakes": [ /* array */ ],
+      "studentTips": [ /* array */ ],
+      "whileYouWait": [ /* array */ ],
+      "motivation": "string",
+      "officialLinks": { /* all URLs */ }
+    },
+    // ... repeat for all 36 states/UTs
+  ]
+}
+```
+
+---
+
+## QUALITY CHECKLIST:
+
+Before providing data, ensure:
+- ✅ All official websites verified and working
+- ✅ All 36 states/UTs covered
+- ✅ Data is from 2025-2026 or clearly marked as "typical"
+- ✅ Phone numbers in correct format (+91-XXX-XXXXXXX)
+- ✅ Email addresses verified
+- ✅ Student language used (no bureaucratic jargon)
+- ✅ Step-by-step processes are clear
+- ✅ Every claim has a source
+- ✅ JSON format is valid and parseable
+- ✅ No placeholder data - if unknown, mention "Data pending - check official website"
+
+---
+
+## PRIORITY INFORMATION:
+
+If data gathering is overwhelming, prioritize states in this order:
+1. Top 10 states: Maharashtra, Tamil Nadu, Karnataka, Rajasthan, Uttar Pradesh, Delhi, West Bengal, Telangana, Andhra Pradesh, Gujarat
+2. Next 10 states: Madhya Pradesh, Kerala, Haryana, Punjab, Bihar, Odisha, Jharkhand, Chhattisgarh, Uttarakhand, Himachal Pradesh
+3. Remaining states and UTs
+
+But ideally, cover ALL for completeness.
+
+---
+
+**BEGIN DATA SCRAPING NOW. PROVIDE COMPREHENSIVE JSON OUTPUT.**
