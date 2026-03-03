@@ -21,6 +21,7 @@ const Header = () => {
         { name: 'Emerging Careers ✨', href: '/emerging-careers' },
       ],
     },
+    { name: 'Counseling 🎓', href: '/counseling' },
     { name: 'AI Impact', href: '/ai-impact' },
     { name: 'Resources', href: '/resources' },
   ]

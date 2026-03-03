@@ -15,6 +15,13 @@ import AIImpact from './pages/AIImpact'
 import Resources from './pages/Resources'
 import EmergingCareers from './pages/EmergingCareers'
 
+// Counseling Pages
+import Counseling from './pages/Counseling'
+import EngineeringCounseling from './pages/EngineeringCounseling'
+import MedicalCounseling from './pages/MedicalCounseling'
+import EngineeringStateDetail from './pages/EngineeringStateDetail'
+import MedicalStateDetail from './pages/MedicalStateDetail'
+
 // Engineering Career Details
 import ComputerScienceDetails from './pages/careers/ComputerScienceDetails'
 import ElectricalEngineeringDetails from './pages/careers/ElectricalEngineeringDetails'
@@ -141,6 +148,13 @@ function App() {
             <Route path="/career/professional-dancer" element={<ProfessionalDancerDetails />} />
             <Route path="/career/musician" element={<MusicianDetails />} />
             <Route path="/career/standup-comedy" element={<StandupComedyDetails />} />
+            
+            {/* Counseling Platform Routes */}
+            <Route path="/counseling" element={<Counseling />} />
+            <Route path="/counseling/engineering" element={<EngineeringCounseling />} />
+            <Route path="/counseling/medical" element={<MedicalCounseling />} />
+            <Route path="/counseling/engineering/:stateCode" element={<EngineeringStateDetail />} />
+            <Route path="/counseling/medical/:stateCode" element={<MedicalStateDetail />} />
           </Routes>
         </main>
         <Footer />
